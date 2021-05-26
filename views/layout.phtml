@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>CV simon</title>
+        <meta name="description" content="Simon PATRY">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="assets/css/main.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    </head>
+    <body class="flex wrap">
+        <header id="#top" class="flex wrap">
+            <div class="flex wrap">
+                <img src="assets/images/profil.jpg" alt="profil picture" class="profil">
+                <h1>Simon PATRY</h1>
+            </div>
+            <nav class="flex wrap">
+                <div class="menu">
+                    <ul>
+                        <li><a href="#hero" >Home</a></li>
+                        <li><a href="#about" >About</a></li>
+                        <li><a href="#resume" >Resume</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <?php include $template ?>
+            </section>
+            <section class="book">
+                <div class="sewing">
+                    <div id="page1" class="page"></div>
+                    <div id="page2" class="page"></div>
+                    <div id="page3" class="page"></div>
+                </div>
+            </section>
+        </main>
+    </body>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/heroContainer.js"></script>
+    <script src="assets/js/turnPage.js"></script>
+</html>

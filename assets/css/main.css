@@ -1,0 +1,226 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+}
+
+:root{
+  --ff: Open Sans;
+  --bc-black: #0B0D10;
+  --txt-white: white;
+}
+
+html {
+    color:white;
+    font-family: var(--ff), sans-serif;
+    font-size: 62.5%;
+}
+
+h1, h2, h3,
+h4, h5, h6{
+    color:#89644f;
+}
+h1{
+    font-size:5em;
+}
+
+body{
+    background: linear-gradient(
+        90deg,
+        black 0%,
+        #021019 30%,
+        #05598D 100%);
+    height:300vh;
+}
+
+/********************************/
+/*            Header            */
+/********************************/
+
+
+header{
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+    width:20%;
+    height:40vh;
+    margin:0 auto;
+    background-color:#0B0D10;
+    
+}
+header div{
+    margin:auto;
+}
+
+    /********************************/
+    /*            photo             */
+    /********************************/
+
+.profil{
+    width:70%;
+    margin:2em auto;
+    border-radius:50%;
+    
+}
+header div h1{
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size:2em;
+}
+
+    /********************************/
+    /*            Navbar            */
+    /********************************/
+
+header nav{
+    width:100%;
+    position:relative;
+}
+
+    /********************************/
+    /*         nav Menu             */
+    /********************************/
+
+.menu{
+    width:100%;
+    position: absolute;
+	background: var(--bc-black);
+	left: 0;
+	display:none;
+}
+.menu ul {
+	list-style-type: none;
+    width:100%;
+    height:60vh;
+    padding:0;
+    margin: 0 auto;
+    text-align:center;
+}
+
+.menu ul li {
+    padding: 1em 0;
+    font-size:2em;
+}
+
+.menu ul li a {
+	font-weight: bold;
+	color: white;
+	text-decoration:none;
+}
+
+/********************************/
+/*            Main              */
+/********************************/
+
+main{
+    width:80%;    
+}
+
+    /********************************/
+    /*        Hero container        */
+    /********************************/
+
+.hero{
+    width:100%;
+    height:100vh;
+    justify-content: center;
+}
+.hero-container{
+    width:50%;
+    flex-direction:column;
+    justify-content:center
+}
+
+.hero-container p{
+    font-size:4em;
+    margin-right:0.5em;
+}
+
+.parent {
+    white-space: nowrap;
+    overflow: hidden; 
+    font-size: 4em;
+    position: relative;
+}
+
+.border {
+    border-bottom: solid 3px white;
+}
+
+/* Animation */
+.parent {
+    animation: animated-text 3s steps(15,end) infinite;
+}
+
+@keyframes animated-text{
+  0%{width: 0;}
+  45%{width: 7em;}
+  90%{width: 0;}
+  100%{width:0%;}
+}
+
+    /********************************/
+    /*        pages "flip"          */
+    /********************************/
+
+.book{
+    border:0.5em solid rgb(53, 53, 53);
+    border-top-right-radius:1em;
+    border-bottom-right-radius:1em; 
+    margin-top:5em;
+    padding-top:2em;
+    padding-right: 1.5em;
+    position: relative;
+    height:100vh;
+    background-color: #8c8c8c;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-leather.png");
+}
+
+.sewing{
+    border-top-right-radius:1em;
+    border-bottom-right-radius:1em; 
+    border:0.3em dashed rgb(53, 53, 53);;
+    height:95vh;
+}
+
+.page{
+    position: absolute;
+    top:4vh;
+    width:98%;
+    height:90vh;
+    transform-origin: left;
+    background-color:white;
+    box-shadow: 1em 1.5em 1.5em black;
+}
+
+@keyframes animated-block{
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(90deg);
+    }
+}
+
+/********************************/
+/*            tools             */
+/********************************/
+
+.flex{
+    display:flex;
+}
+.wrap{
+    flex-wrap:wrap;
+}
+@media screen and (min-width: 768px) {
+    .menu{
+        display:flex;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    
+    .menu{
+        display:flex;
+    }
+}
