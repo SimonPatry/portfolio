@@ -11,8 +11,8 @@
     <body class="flex wrap">
         <header id="#top" class="flex wrap">
             <div class="flex wrap">
-                <img src="assets/images/profil.jpg" alt="profil picture" class="profil">
-                <h1>Simon PATRY</h1>
+                <a href="index.php" class="home"><img src="assets/images/profil.jpg" alt="profil picture" class="profil"></a>
+                <a class="login" href="index.php?page=admin"><h1>Simon PATRY</h1></a>
             </div>
             <nav class="flex wrap">
                 <div class="menu">
@@ -29,13 +29,6 @@
         <main>
             <section>
                 <?php include $template ?>
-            </section>
-            <section class="book">
-                <div class="sewing">
-                    <div id="page1" class="page"></div>
-                    <div id="page2" class="page"></div>
-                    <div id="page3" class="page"></div>
-                </div>
             </section>
         </main>
     </body>

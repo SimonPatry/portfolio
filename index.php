@@ -12,14 +12,15 @@ if (isset($_GET['page']))
 	
 	switch($_GET['page'])
 	{
-		case 'accueil':
-		
+		case 'admin':
+			$controller = new Controllers\AdminController();
+			$controller -> display();
 		break;
 	}
 	
 }
 else
 {
-	$controller = new Controllers\Accueil();
+	$controller = new Controllers\AccueilController();
 	$controller -> display();
 }

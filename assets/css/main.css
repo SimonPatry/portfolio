@@ -6,7 +6,7 @@
 :root{
   --ff: Open Sans;
   --bc-black: #0B0D10;
-  --txt-white: white;
+  --txt-color: white;
 }
 
 html {
@@ -55,17 +55,26 @@ header div{
     /*            photo             */
     /********************************/
 
+.home{
+    text-align:center;
+}
+
 .profil{
     width:70%;
     margin:2em auto;
     border-radius:50%;
     
 }
-header div h1{
+
+.login{
+    text-decoration: none;
     width:100%;
-    text-align:center;
+}
+
+header div .login h1{
     color:white;
     font-size:2em;
+    text-align:center;
 }
 
     /********************************/
@@ -181,6 +190,8 @@ main{
     border-bottom-right-radius:1em; 
     border:0.3em dashed rgb(53, 53, 53);;
     height:95vh;
+    z-index:1;
+    
 }
 
 .page{

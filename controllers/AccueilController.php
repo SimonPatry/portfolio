@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-class Accueil
+class AccueilController
 {
 	public function display()
 	{
