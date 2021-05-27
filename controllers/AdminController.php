@@ -27,10 +27,9 @@ class AdminController
 		{
 			$admin = $this -> model -> getAdminByIdentifiant($_POST['identifiant']);
 			$pw = $_POST['pw'];
-		
 			if (password_verify($pw, $admin['password']))
 			{
-				$_SESSION['admin'] = $admin['first_name'];
+				$_SESSION['admin'] = $admin['pseudo'];
 				header('location:index.php?page=dashboard');
 				exit;
 			}

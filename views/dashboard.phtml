@@ -6,37 +6,33 @@
         <meta name="description" content="Simon PATRY">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="assets/css/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/fontawesome.min.css">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/brands.min.css">
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/solid.min.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     </head>
     <body class="flex wrap">
         <header id="#top" class="flex wrap">
             <div class="flex wrap">
-                <a href="accueil" class="home"><img src="assets/ressources/images/profil.jpg" alt="profil picture" class="profil"></a>
-            <?php if(isset($_SESSION['admin'])): ?>
-                <a class="login" href="dashboard"><h1>Simon PATRY</h1></a>
-            <?php else: ?>
-                <a class="login" href="admin"><h1>Simon PATRY</h1></a>
-            <?php endif; ?>
+                <a href="#" class="home"><img src="assets/ressources/images/profil.jpg" alt="profil picture" class="profil"></a>
+                <button><p>Simon PATRY</p></button>
             </div>
             <nav class="flex wrap">
                 <div class="menu">
                     <ul>
                         <li><a href="accueil" >Home</a></li>
-                        <li><a href="#about" >About</a></li>
-                        <li><a href="#resume" >Resume</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="" id="projects">Projects</a></li>
+                        <li><a href="" id="categories">Categories</a></li>
+                        <li><a href="" id="cv">Curriculum Vitae</a></li>
+                        <li><a href="" id="contact">Contact</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
         <main>
-            <section>
-                <?php include $template ?>
+            <section id="content">
             </section>
         </main>
+        <script src="assets/js/dashboard.js"></script>
     </body>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/heroContainer.js"></script>
-    <script src="assets/js/turnPage.js"></script>
 </html>

@@ -9,15 +9,26 @@ session_start();
 
 if (isset($_GET['page']))
 {
-	
 	switch($_GET['page'])
 	{
 		case 'admin':
 			$controller = new Controllers\AdminController();
 			$controller -> display();
 		break;
+		case 'dashboard':
+			$controller = new Controllers\DashboardController();
+			$controller -> display();
+		break;
 	}
-	
+}
+else if(isset($_GET['ajax'])){
+	switch($_GET['ajax'])
+	{
+		case 'projects':
+			$controller = new Controllers\DashboardProjectsController();
+			$controller -> display();
+			break;
+	}
 }
 else
 {

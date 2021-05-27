@@ -4,13 +4,13 @@ namespace Models;
 
 class Admin extends Database
 {
-    public function getAdminByIdentifiant($email)
+    public function getAdminByIdentifiant($pseudo)
     {
         
     	$result = $this -> findOne("
-    	SELECT password, email, first_name, last_name
+    	SELECT pseudo, password
     	FROM admin
-    	WHERE email = ?", [$email]);
+    	WHERE pseudo = ?", [$pseudo]);
     	
         if(!$result)
 		{

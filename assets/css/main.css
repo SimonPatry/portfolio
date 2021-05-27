@@ -214,6 +214,67 @@ main{
 }
 
 /********************************/
+/*          Dashboard           */
+/********************************/
+
+    /********************************/
+    /*          projects            */
+    /********************************/
+
+.project{
+    background-color: rgba(0,0,0,0.7);
+    width:80%;
+    margin:auto;
+    justify-content:space-between;
+    padding:1em;
+}
+
+.project .txtImg{
+    width:80%;
+    margin:auto;
+    justify-content:space-between;
+}
+
+.project .txtImg img,
+.project .txtImg .text{
+    width:47%;
+    font-size:2em;
+    padding:1em;
+}
+
+.project .txtImg .text h3{
+    text-align:center;
+    padding:0.5em;
+}
+
+.project .txtImg .text p
+{
+    margin: 0.5em 0;
+}
+.project .video{
+    width:100%;
+}
+.project .video iframe{
+    width: 90em;
+    height: 60em;
+    margin:auto;
+}
+
+.project .buttons{
+    width:100%;
+    justify-content:space-around;
+    margin:3em;
+}
+
+.project .buttons .editProject,
+.project .buttons .delProject{
+    width:20%;
+    height:3em;
+}
+
+
+
+/********************************/
 /*            tools             */
 /********************************/
 

@@ -10,9 +10,8 @@ abstract class Database
 	{
 		try
 		{
-			$this -> bdd = new \PDO('mysql:host=db.3wa.io;dbname=maudepap_restaurant;charset=utf8','maudepap','ca62be21a9f816743bca954a98e78bf6');
+			$this -> bdd = new \PDO('mysql:host=db.3wa.io;dbname=simonpat_portfolio;charset=utf8','simonpat','c9bd35ef21d84659729783bae58bdef8');
 		}
-		
 		catch(\Exception $e)
 		{
 			echo 'erreur bdd';
