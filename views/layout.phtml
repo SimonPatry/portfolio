@@ -24,8 +24,11 @@
                         <li><a href="accueil" >Home</a></li>
                         <li><a href="#about" >About</a></li>
                         <li><a href="#resume" >Resume</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="portfolio">Portfolio</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <?php if(isset($_SESSION['admin'])): ?>
+                            <li><a href="index.php?page=admin&action=deco">Deconnexion</a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </nav>

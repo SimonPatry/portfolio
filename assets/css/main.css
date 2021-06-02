@@ -202,7 +202,53 @@ main{
     transform-origin: left;
     background-color:white;
     box-shadow: 1em 1.5em 1.5em black;
+    overflow: auto;
 }
+
+#projectsPage{
+    background-color:#525659;
+    justify-content:space-around;
+    padding:2em;
+}
+#projectsPage .preview{
+    position:relative;
+    width:30%;
+    border-radius:2em;
+}
+#projectsPage .preview:hover  .prev-info{
+    display:block;
+}
+#projectsPage .preview img{
+    width:100%;
+    height:auto;
+    border-radius:2em;
+    box-shadow: 0.5em 0.5em 0.5em black;
+    border:0.1em solid black
+}
+
+#projectsPage .preview .prev-info{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    border-top-left-radius:2em;
+    border-top-right-radius:2em;
+    text-align:center;
+    display:none;
+    background-color: rgba(255,255,255,0.5);
+}
+#projectsPage .preview .prev-info h3,
+#projectsPage .preview .prev-info p{
+    color:black;
+    font-size:2em;
+}
+
+
+        /********************************/
+        /*        projects prev         */
+        /********************************/
+
+
 
 @keyframes animated-block{
     from{
@@ -222,11 +268,12 @@ main{
     /********************************/
 
 .project{
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.5);
     width:80%;
-    margin:auto;
+    margin: 2em auto;
     justify-content:space-between;
     padding:1em;
+    border-radius:2em;
 }
 
 .project .txtImg{
@@ -237,19 +284,22 @@ main{
 
 .project .txtImg img,
 .project .txtImg .text{
-    width:47%;
+    width:50%;
     font-size:2em;
     padding:1em;
 }
 
-.project .txtImg .text h3{
+.project h3{
     text-align:center;
+    width:100%;
     padding:0.5em;
+    font-size:3em;
 }
 
 .project .txtImg .text p
 {
     margin: 0.5em 0;
+    text-align: justify;
 }
 .project .video{
     width:100%;
@@ -284,6 +334,14 @@ main{
 .wrap{
     flex-wrap:wrap;
 }
+.hide{
+    display:none;
+}
+
+/********************************/
+/*        responsive            */
+/********************************/
+
 @media screen and (min-width: 768px) {
     .menu{
         display:flex;

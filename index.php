@@ -19,6 +19,10 @@ if (isset($_GET['page']))
 			$controller = new Controllers\DashboardController();
 			$controller -> display();
 		break;
+		case 'portfolio':
+			$controller = new Controllers\PortfolioController();
+			$controller -> display();
+		break;
 	}
 }
 else if(isset($_GET['ajax'])){
@@ -27,6 +31,30 @@ else if(isset($_GET['ajax'])){
 		case 'projects':
 			$controller = new Controllers\DashboardProjectsController();
 			$controller -> display();
+			break;
+		case 'editProj':
+			$controller = new Controllers\DashboardProjectsController();
+			$controller -> editProject();
+			break;
+		case 'addProj':
+			$controller = new Controllers\DashboardProjectsController();
+			$controller -> editProject();
+			break;
+		case 'categories':
+			$controller = new Controllers\CategoriesController();
+			$controller -> displayCategories();
+			break;
+		case 'editCategory':
+			$controller = new Controllers\CategoriesController();
+			$controller -> editCategory();
+			break;
+		case 'addCategory':
+			$controller = new Controllers\CategoriesController();
+			$controller -> addCategory();
+			break;
+		case 'delCategory':
+			$controller = new Controllers\CategoriesController();
+			$controller -> deleteCategory($_GET['id']);
 			break;
 	}
 }

@@ -9,7 +9,31 @@
 <section class="book">
     <div class="sewing">
         <div id="page1" class="page"></div>
-        <div id="page2" class="page"></div>
-        <div id="page3" class="page"></div>
+        <div id="page2" class="page">
+        <embed
+            src="assets\ressources\cv\CV_Simon_PATRY.pdf"
+            height="95%"
+            width="100%"
+        ></embed>
+        </div>
+        <div id="projectsPage" class="page flex wrap">
+        <?php foreach($projects as $project): ?>
+            <div class="preview">
+                <a href="accueil"><img src="<?= $project['image']?>" alt="preview <?= $project['name']?>"></a>
+                <div class="prev-info">
+                    <h3><?= $project['name']?></h3>
+                    <p>Categorie: <?= $project['category']?></p>
+                </div>
+            </div>
+        <?php endforeach; ?>
+        </div>
+    </div>
+    <div id="#about">
+        <article>
+            <p>Bonjour à vous !</p>
+            <p>Vous n'atterissez surement pas ici par hasard, alors point besoin de me présenter.
+                Mais je vais quand même le faire, juste pour le plaisir ! 
+            </p>
+        </article>
     </div>
 </section>

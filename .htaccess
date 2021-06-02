@@ -7,6 +7,9 @@ RewriteRule ^admin$ index.php?page=admin [L]
 #Accueil
 RewriteRule ^accueil$ index.php [L]
 
+#portfolio
+RewriteRule ^portfolio$ index.php?page=portfolio [L]
+
 #dashboard
 RewriteRule ^dashboard$ index.php?page=dashboard [L]
 

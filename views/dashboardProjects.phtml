@@ -1,9 +1,32 @@
-
 <?php foreach($projects as $project): ?>
+    <article data-name="form" data-id="<?= $project['id'] ?>" class="hide">
+        <form method="post" class="form" id="<?= $project['id'] ?>">
+            <div class="project">
+                <label for="name">Nom:</label>
+                <input class="name" name="name" value="<?= $project['name']?>"></input>
+                <div class="text">
+                    <label for="cat">Categorie:</label>
+                    <select name="cat">
+                        <option value="1">Web</option>
+                        <option value="2">C#</option>
+                        <option value="3">C</option>
+                    </select>
+                    <input class="cat" name="cat" type="text" value="<?= $project['category']?>"></input>
+                    <p>Description:</p>
+                    <textarea class="desc"><?= $project['description']?></textarea>
+                </div>
+                <label for="image">Image:</label>
+                <input class="image" type="text" name="image" value="<?= $project['image']?>"></input>
+                <label for="video">video(embed):</label>
+                <input class="vid" type="text" name="video" value="<?= $project['video']?>"></input>
+            </div>
+            <button type="button" data-id="<? $project['id'] ?>" class="save"><i class="fas fa-pen-nib">  Edit</i></button>
+        </form>
+    </article>
     <article class="project flex wrap">
         <div class="txtImg flex wrap">
+            <h3><?= $project['name']?></h3>
             <div class="text">
-                <h3><?= $project['name']?></h3>
                 <p>Categorie: <?= $project['category']?></p>
                 <p>Posté le: <?= $project['postDate']?></p>
                 <p>Description:</p>
@@ -12,11 +35,14 @@
             <img src="<?= $project['image']?>" alt="preview <?= $project['name']?>">
         </div>
         <div class="video flex">
-            <iframe src="https://www.youtube.com/embed/o_7J0Z2zRE4" title="<?= $project['name']?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="<?= $project['video']?>" title="<?= $project['name']?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="buttons flex wrap">
-            <button class="editProject"><i class="fas fa-pen-nib">  Edit</i></button>
-            <button class="delProject"><i class="fas fa-trash-alt"> Delete</i></button>
+            <button data-id="<? $project['id'] ?>" class="editProject"><i class="fas fa-pen-nib">  Edit</i></button>
+            <button data-id="<? $project['id'] ?>" class="delProject"><i class="fas fa-trash-alt"> Delete</i></button>
+            <button class="img">add image</button>
         </div>
     </article>
+    <script src="assets/js/dashboard.js"></script>
 <?php endforeach; ?>
+

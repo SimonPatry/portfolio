@@ -1,0 +1,46 @@
+<?php
+
+namespace Controllers;
+
+class CategoriesController
+{
+    private $categories;
+    public function __construct()
+    {
+        $this -> categories = new \Models\Categories();
+    }
+	public function displayCategories()
+	{
+		if(!isset($_SESSION['admin']))
+		{
+			header('admin');
+			exit;
+		}
+	    $categoriesTable = $this -> categories -> getAllCategories();
+		include "views/dashboardCategories.phtml";
+	}
+	public function editCategory()
+	{
+		$datas = file_get_contents('php://input');
+        
+        $cat = json_decode($datas);
+        
+        $datas = [$cat->name, $cat->id];
+	    $this -> categories -> updateCategory($datas);
+		include "views/dashboardCategories.phtml";
+	}
+	public function deleteCategory($id)
+	{
+	    $this -> categories -> delCategory($id);
+		include "views/dashboardCategories.phtml";
+	}
+	public function addCategory()
+	{
+		$datas = file_get_contents('php://input');
+        
+        $cat = json_decode($datas);
+        $datas = [$cat->name];
+	    $this -> categories -> newCategory($datas);
+		include "views/dashboardCategories.phtml";
+	}
+}

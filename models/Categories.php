@@ -7,14 +7,14 @@ class Categories extends Database
     public function getAllCategories()
     {
         return $this -> findAll("
-    	SELECT id, name, is_dish, description
+    	SELECT id, name
     	FROM category
     	");
     }
     public function getCategoryById($id)
     {
     	return $this -> findOne("
-    	SELECT id, name, is_dish, description
+    	SELECT id, name
     	FROM category
     	WHERE id = ?", [$id]);
     }
@@ -22,7 +22,7 @@ class Categories extends Database
     {
         $this -> modifyOne("
             UPDATE category
-            SET name = ?, is_dish = ?, description = ?
+            SET name = ?
             WHERE id = ?", $datas);
     }
     public function delCategory($id)
@@ -34,8 +34,8 @@ class Categories extends Database
     public function newCategory($datas)
     {
         $this -> modifyOne("
-            INSERT INTO category(name, is_dish, description)
-            VALUES (?, ?, ?)", $datas);
+            INSERT INTO category(name)
+            VALUES (?)", $datas);
     }
     
     
