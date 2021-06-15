@@ -81,30 +81,36 @@ function editCategory(){
 /*                      Projects
 /********************************************************/
 
-function addProject(){
-    let  project = {
-        id: art.dataset.id,
-        name: proj.querySelector(".name").value,
-        cat: proj.querySelector(".cat").value,
-        description: proj.querySelector(".desc").value,
-        image: proj.querySelector(".image").value,
-        video: proj.querySelector(".vid").value,
-    }
-    project = JSON.stringify(project);
-    let options = {
-        method : 'POST',
-        body : project,
-        headers:{'Content-Type':'application/json'}
-    }
-    fetch(`index.php?ajax=addProj`, options)
-    .then( function (){
-        projectsTable(null);
+function addProject(event)
+{
+    console.log('coucou');
+    event.preventDefault();
+    let project = document.getElementById('newProj');
+    let formData = new FormData(project);
+    console.log(formData);
+    fetch('index.php?ajax=addProj',
+    {
+        method: 'POST',
+        body: formData,
+    })
+    .then(function(){
+        projectsList(event); 
     })
 }
 
-function delProject()
+function delProject(event)
 {
-
+    console.log("coucou");
+    event.preventDefault();
+    let confirm = window.confirm("Voulez-vous supprimer le projet ?")
+    if(confirm)
+	{
+        let id = this.dataset.id;
+        fetch(`index.php?ajax=delProj&id=${id}`)
+        .then( function(){
+            projectsList(event);
+        })
+	}
 }
 
 function showProjectForm(){
@@ -135,7 +141,7 @@ function showProjectForm(){
         console.log(options);
         fetch(`index.php?ajax=editProj`, options)
         .then( function (){
-		    projectsTable(null);
+		    projectsList(null);
 	    })
     }
     else{
@@ -158,18 +164,30 @@ function projectsList(event){
         editPro.forEach((project)=>{
             project.addEventListener('click',showProjectForm);
         })
-        let delProject = document.querySelectorAll('.delProject')
-        delProject.forEach((deletePro)=>{
-            deletePro.addEventListener('click',deleteProject);
+        let delProj = document.querySelectorAll('.delProject')
+        delProj.forEach((deletePro)=>{
+            deletePro.addEventListener('click', delProject);
+        });
         let addImage = document.querySelectorAll('img');
         addImage.forEach((add)=>{
             add.addEventListener('click', selectImage);
         })
-        })
+        document.getElementById("addProj").addEventListener('click', addProject);
+        console.log(document.getElementById("addProj"));
     });
 }
 
-
+function galleryTable(event=null){
+    if (event != null)
+        event.preventDefault();
+    fetch("index.php?ajax=gallery")
+    .then(response => response.text())
+    .then(response => {
+        document.getElementById("content").innerHTML = response;
+        document.querySelectorAll(".delCat").forEach(image => {image.addEventListener("click", delGallery)});
+        document.getElementById('newGallery').addEventListener("click", addCategory);
+    });
+}
 
 /********************************************************/
 /*                      DOM
@@ -178,6 +196,5 @@ function projectsList(event){
 document.addEventListener("DOMContentLoaded",function(){
     document.getElementById('projects').addEventListener('click', projectsList);
     document.getElementById('categories').addEventListener("click", categoriesTable);
-    /*document.getElementById('cv').addEventListener('click', projectsTable);
-    document.getElementById('contact').addEventListener('click', projectsTable);*/
+    document.getElementById('gallery').addEventListener('click', galleryTable);
 });

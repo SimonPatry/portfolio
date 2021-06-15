@@ -47,6 +47,7 @@ class Projects extends Database
     	FROM project
         INNER JOIN category ON id_category = category.id");
     }
+    
     public function getAllProjectsPreview(){
         return $this -> findAll("
     	SELECT project.name, image, postDate, category.name as category

@@ -1,4 +1,4 @@
-<section class="hero flex wrap">  
+<section class="hero flex wrap translucide">  
     <div class="hero-container flex wrap">
         <h1>Simon PATRY</h1>
         <div class="flex wrap">
@@ -6,34 +6,76 @@
         </div>
     </div>
 </section>
-<section class="book">
-    <div class="sewing">
-        <div id="page1" class="page"></div>
-        <div id="page2" class="page">
-        <embed
-            src="assets\ressources\cv\CV_Simon_PATRY.pdf"
-            height="95%"
-            width="100%"
-        ></embed>
+<section>
+    <div id="about" class="flex wrap">
+        <div class="me-img">
+            <img id="me" src="assets/ressources/images/me.jpg" alt="me">
         </div>
-        <div id="projectsPage" class="page flex wrap">
-        <?php foreach($projects as $project): ?>
-            <div class="preview">
-                <a href="accueil"><img src="<?= $project['image']?>" alt="preview <?= $project['name']?>"></a>
-                <div class="prev-info">
-                    <h3><?= $project['name']?></h3>
-                    <p>Categorie: <?= $project['category']?></p>
-                </div>
-            </div>
-        <?php endforeach; ?>
+        <div class="me-txt">
+            <p>Simon PATRY</p>
+            <p>25 ans</p>
+            <p>simonpatry12@gmail.com</p>
+            <p>06 65 72 43 16</p>
+            <p>Bonjour à toi, cher incconu, quel plaisir de te trouver ici, sache que tu es le bienvenu chez moi !</p>
+            <p>Je ne me présente pas, on atteris rarement ici par hasard.. mais je vais tout de même vous parler un peu de moi</p>
+            <p>On va évidemment passé les détails: simon, 25 ans, développeur web , bien sûr ! mais ce n'est pas tout: je dirais bien que j'aime le sport, mais.. bon si, un peu quand même. Mais ce n'est pas ma grande passion, j'aime les jeux de stratégie d'énigmes, j'aime grind de manière général, être en état perpétuel d'évolution. J'apprend à dessiner (je posterais surement quelques projets que je trouve plutôt sympas), j'aime jouer et écouter tout genre de musiques (les grand écarts entre thomas fersen, les cowboys fringuants et nightwish sont des plus stimulants pour moi haha)</p>
         </div>
     </div>
-    <div id="#about">
-        <article>
-            <p>Bonjour à vous !</p>
-            <p>Vous n'atterissez surement pas ici par hasard, alors point besoin de me présenter.
-                Mais je vais quand même le faire, juste pour le plaisir ! 
-            </p>
-        </article>
+    <div class="skills flex wrap translucide">
+        <h1>Compétences</h1>
+        <div class="skill-bar"><p class="skill-name" id="html" >HTML</p></div>
+        <div class="skill-bar"><p class="skill-name" id="css">CSS</p></div>
+        <div class="skill-bar"><p class="skill-name" id="js">JS</p></div>
+        <div class="skill-bar"><p class="skill-name" id="php">PHP</p></div>
+        <div class="skill-bar"><p class="skill-name" id="mysql">MySQL</p></div>
+    </div>
+    <div class="course flex wrap">
+        <div class="block-school flex wrap">
+            <h2>Formation</h2>
+            <article class="school">
+                <div><h3>3W Academy</h3><hr></div>
+                <legend>Ecole de développement Web</legend>
+                <p>Formation de 4 mois sur les langages de bases du Web: HTML, CSS, javascipt, PHP et MySQL. Introduction aux CMS(wordpress) et aux frameworks(symfony, vueJS).Apprentissage de la construction de base d'un site entier ( façade et base de données)</p>
+            </article>
+            <article class="school">
+                <div><h3>Ecole 42</h3><hr></div>
+                <legend>Ecole de développement logiciels</legend>
+                <p>Formation en autonomie complète sur le langage C et sur les bases de la programmation en générale. Branche graphique: réalisation d'une série de projets avec un rendu visuel, conception de moteurs graphiques avec certaines techniques spécifiques (raycasting)</p>
+            </article>
+            <article>
+                <h3>Avant ça..</h3>
+                <legend>remonter 3 ans en arrière</legend>
+                <p></p>
+            </article>
+        </div>
+        <div class="block-exp flex wrap">
+            <article class="exp">
+                <h2>Empowering Champagne Challenge</h2>
+                <legend>Hackaton - 2nde place</legend>
+                <p>Développement d'un site pour le projet Carbo'Score, une calculatrice qi permet aux viticulteurs de mesurer leur impact carbone à l'échelle de leur exploitation.</p>
+                <a href="href="portfolio#carboscore">">Voir plus..</a>
+            </article>
+            <article class="exp">
+                <p></p>
+            </article>
+        </div>
+    </div>
+    <!--<div>
+    <embed
+        src="assets\ressources\cv\CV_Simon_PATRY.pdf"
+        height="100%"
+        width="100%"
+    ></embed>
+    </div>-->
+    <div id="projectsPage" class="flex wrap translucide">
+    <?php foreach($projects as $project): ?>
+        <div class="preview">
+            <a href="portfolio#<?= $project['name']?>"><img src="<?= $project['image']?>" alt="preview <?= $project['name']?>"></a>
+            <div class="prev-info">
+                <h3><?= $project['name']?></h3>
+                <p>Categorie: <?= $project['category']?></p>
+            </div>
+        </div>
+    <?php endforeach; ?>
     </div>
 </section>

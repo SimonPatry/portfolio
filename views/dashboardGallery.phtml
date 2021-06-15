@@ -1,0 +1,31 @@
+<div>
+    <table id="dashboardGallery">
+        <tr>
+            <th>Project</th>
+            <th>Src</th>
+            <th>Alt</th>
+            <th>Delete</th>
+        </tr>
+        <?php foreach($gallery as $image): ?>
+        <tr>
+            <td><?= $image['id_project'] ?></td>
+            <td><img  src="<?= $image['src'] ?>"></td>
+            <td><?= $image['alt'] ?></td>
+            <td><a href="#" class="delImg" data-id="<?= $image['id'] ?>"><i class="fas fa-trash-alt"></i></a></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</div>
+<div>
+    <label for="src">Src:</label>
+    <input class="src" name="src" type="text">
+    <label for="alt">Alt:</label>
+    <input class="alt" name="" type="text">
+    <label for="proj">Project:</label>
+    <select name="proj">
+    <?php foreach($projects as $project): ?>
+        <option value="<?= $project['id'] ?>"><?= $project['name'] ?></option>
+    <?php endforeach; ?>
+    </select>
+</div>
+<script src="assets/js/dashboard.js"></script>

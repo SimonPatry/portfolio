@@ -12,21 +12,61 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     </head>
     <body class="flex wrap">
-        <header id="#top" class="flex wrap">
-            <div class="flex wrap">
-                <a href="accueil" class="home"><img src="assets/ressources/images/profil.jpg" alt="profil picture" class="profil"></a>
-                <a class="login" href="dashboard"><h1>Simon PATRY</h1></a>
-            </div>
-            <nav class="flex wrap">
-                <div class="menu">
-                    <ul>
-                        <li><a href="accueil" >Home</a></li>
-                        <li><a href="" id="projects">Projects</a></li>
-                        <li><a href="" id="categories">Categories</a></li>
-                        <li><a href="" id="cv">Curriculum Vitae</a></li>
-                        <li><a href="" id="contact">Contact</a></li>
-                    </ul>
-                </div>
+    <header id="#top" class="flex wrap">
+            <nav class="navbar">
+                <ul class="navbar-nav">
+                    <li class="logo">
+                        <a href="accueil" class=" home">
+                            <img src="assets/ressources/images/profil.jpg" alt="profil picture" class="profil">
+                        </a>
+                    </li>
+                    <li class="nav-item">    
+                        <?php if(isset($_SESSION['admin'])): ?>
+                        <a class="login nav-link" href="dashboard">
+                            <i class="fas fa-flushed fa-nav"></i>
+                            <span class="link-text">SIMON</span>
+                        </a>
+                        <?php else: ?>
+                        <a class="login nav-link" href="admin">
+                            <i class="fas fa-flushed fa-nav"></i>
+                            <span class="link-text">SIMON</span>
+                        </a>
+                        <?php endif; ?>
+                    </li>
+                    <li class="nav-item">
+                        <a href="accueil" class="nav-link">
+                            <i class="fas fa-igloo fa-nav"></i>
+                            <span class="link-text">HOME</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" id="projects" class="nav-link">
+                            <i class="fas fa-rocket fa-nav"></i>
+                            <span class="link-text">PROJECTS</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" id="categories" class="nav-link">
+                            <i class="fas fa-clipboard-list fa-nav"></i>
+                            <span class="link-text">CATEGORIES</span>
+                        </a>
+                    </li>
+                    <?php if(isset($_SESSION['admin'])): ?>
+                    <li>
+                        <a href="index.php?page=admin&action=deco" class="nav-link">
+                            <i class="fas fa-ghost fa-nav"></i>
+                            <span class="link-text">DECONNECTION</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+                    <li class="nav-item" id="themeButton">
+                        <a href="#top" class="nav-link">
+                            <i class="fas fa-chevron-circle-up fa-nav"></i>
+                            <span class="link-text">UP</span>
+                        </a>
+                    </li>
+                    
+                </ul>
             </nav>
         </header>
         <main>

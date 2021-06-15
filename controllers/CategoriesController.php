@@ -11,11 +11,6 @@ class CategoriesController
     }
 	public function displayCategories()
 	{
-		if(!isset($_SESSION['admin']))
-		{
-			header('admin');
-			exit;
-		}
 	    $categoriesTable = $this -> categories -> getAllCategories();
 		include "views/dashboardCategories.phtml";
 	}

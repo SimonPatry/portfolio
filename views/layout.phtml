@@ -7,30 +7,67 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="assets/css/main.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/fontawesome.min.css">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/brands.min.css">
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/solid.min.css">
     </head>
-    <body class="flex wrap">
+    <body class="dark">
+    <video src="assets/ressources/images/bg-main.mov" autoplay loop playsinline muted></video>
         <header id="#top" class="flex wrap">
-            <div class="flex wrap">
-                <a href="accueil" class="home"><img src="assets/ressources/images/profil.jpg" alt="profil picture" class="profil"></a>
-            <?php if(isset($_SESSION['admin'])): ?>
-                <a class="login" href="dashboard"><h1>Simon PATRY</h1></a>
-            <?php else: ?>
-                <a class="login" href="admin"><h1>Simon PATRY</h1></a>
-            <?php endif; ?>
-            </div>
-            <nav class="flex wrap">
-                <div class="menu">
-                    <ul>
-                        <li><a href="accueil" >Home</a></li>
-                        <li><a href="#about" >About</a></li>
-                        <li><a href="#resume" >Resume</a></li>
-                        <li><a href="portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
+            <nav class="navbar">
+                <ul class="navbar-nav">
+                    <li class="logo">
+                        <a href="accueil" class=" home">
+                            <img src="assets/ressources/images/profil.jpg" alt="profil picture" class="profil">
+                        </a>
+                    </li>
+                    <li class="nav-item">    
                         <?php if(isset($_SESSION['admin'])): ?>
-                            <li><a href="index.php?page=admin&action=deco">Deconnexion</a></li>
+                        <a class="login nav-link" href="dashboard">
+                            <i class="fas fa-flushed fa-nav"></i>
+                            <span class="link-text">SIMON</span>
+                        </a>
+                        <?php else: ?>
+                        <a class="login nav-link" href="admin">
+                            <i class="fas fa-flushed fa-nav"></i>
+                            <span class="link-text">SIMON</span>
+                        </a>
                         <?php endif; ?>
-                    </ul>
-                </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="accueil" class="nav-link">
+                            <i class="fas fa-igloo fa-nav"></i>
+                            <span class="link-text">HOME</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="portfolio" class="nav-link">
+                            <i class="fas fa-dungeon fa-nav"></i>
+                            <span class="link-text">PORTFOLIO</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact" class="nav-link">
+                            <i class="fas fa-id-badge fa-nav"></i>
+                            <span class="link-text">CONTACT</span>
+                        </a>
+                    </li>
+                    <?php if(isset($_SESSION['admin'])): ?>
+                    <li>
+                        <a href="index.php?page=admin&action=deco" class="nav-link">
+                            <i class="fas fa-ghost fa-nav"></i>
+                            <span class="link-text">DECONNECTION</span>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+                    <li class="nav-item" id="themeButton">
+                        <a href="#top" class="nav-link">
+                            <i class="fas fa-chevron-circle-up fa-nav"></i>
+                            <span class="link-text">UP</span>
+                        </a>
+                    </li>
+                    
+                </ul>
             </nav>
         </header>
         <main>
@@ -42,4 +79,5 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/heroContainer.js"></script>
     <script src="assets/js/turnPage.js"></script>
+    <script src="assets/js/slider.js"></script>
 </html>

@@ -16,12 +16,3 @@ RewriteRule ^dashboard$ index.php?page=dashboard [L]
 
 #Contact
 RewriteRule ^contact$ index.php?page=contact [L]
-
-
-#Menus 
-RewriteRule ^plats$ index.php?page=plats [L]
-RewriteRule ^menus$ index.php?page=menus [L]
-RewriteRule ^menu/([A-Z]+)$ index.php?page=menus&menu=$1 [L]
-
-#Menus dashbord
-RewriteRule ^menu/([A-Z]+)$ index.php?ajax=menus&menu=$1 [L]

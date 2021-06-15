@@ -38,7 +38,11 @@ else if(isset($_GET['ajax'])){
 			break;
 		case 'addProj':
 			$controller = new Controllers\DashboardProjectsController();
-			$controller -> editProject();
+			$controller -> addProject();
+			break;
+		case 'delProj':
+			$controller = new Controllers\DashboardProjectsController();
+			$controller -> delProject();
 			break;
 		case 'categories':
 			$controller = new Controllers\CategoriesController();
@@ -55,6 +59,18 @@ else if(isset($_GET['ajax'])){
 		case 'delCategory':
 			$controller = new Controllers\CategoriesController();
 			$controller -> deleteCategory($_GET['id']);
+			break;
+		case 'gallery':
+			$controller = new Controllers\GalleryController();
+			$controller -> gallery();
+			break;
+		case 'addGallery':
+			$controller = new Controllers\GalleryController();
+			$controller -> addImage();
+			break;
+		case 'delGallery':
+			$controller = new Controllers\GalleryController();
+			$controller -> deleteImage();
 			break;
 	}
 }

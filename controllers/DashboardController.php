@@ -6,6 +6,12 @@ class DashboardController
 {
 	public function display()
 	{
-		include 'views/dashboard.phtml';
+		if(!isset($_SESSION['admin']))
+		{
+			header('admin');
+			exit;
+		}
+		else
+			include 'views/dashboard.phtml';
 	}
 }

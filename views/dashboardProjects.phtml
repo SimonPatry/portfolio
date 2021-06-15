@@ -34,15 +34,39 @@
             </div>
             <img src="<?= $project['image']?>" alt="preview <?= $project['name']?>">
         </div>
+        <?php if($project['video'] != "" ): ?>
         <div class="video flex">
             <iframe src="<?= $project['video']?>" title="<?= $project['name']?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+        <?php endif; ?>
         <div class="buttons flex wrap">
-            <button data-id="<? $project['id'] ?>" class="editProject"><i class="fas fa-pen-nib">  Edit</i></button>
-            <button data-id="<? $project['id'] ?>" class="delProject"><i class="fas fa-trash-alt"> Delete</i></button>
+            <button data-id="<?= $project['id'] ?>" class="editProject"><i class="fas fa-pen-nib">  Edit</i></button>
+            <button data-id="<?= $project['id'] ?>" class="delProject"><i class="fas fa-trash-alt"> Delete</i></button>
             <button class="img">add image</button>
         </div>
     </article>
-    <script src="assets/js/dashboard.js"></script>
 <?php endforeach; ?>
-
+<article>
+        <form id="newProj" method="post" class="form" enctype="multipart/form-data">
+            <div class="project">
+                <label for="name">Nom:</label>
+                <input class="name" name="name"></input>
+                <div class="text">
+                    <label for="cat">Categorie:</label>
+                    <select name="cat">
+                        <option value="1">Web</option>
+                        <option value="2">C#</option>
+                        <option value="3">C</option>
+                    </select>
+                    <label for="desc">Description:</label>
+                    <textarea name="desc" class="desc"></textarea>
+                </div>
+                <label for="image">Image</label>
+                <input type="file" name="image" class="image-menus"></input>
+                <label for="video">video(embed):</label>
+                <input class="vid" type="text" name="video"></input>
+                <button id="addProj" type="button" class="add"><i class="fas fa-pen-nib">ajouter</i></button>
+            </div>
+        </form>
+    </article>
+    <script src="assets/js/dashboard.js"></script>
