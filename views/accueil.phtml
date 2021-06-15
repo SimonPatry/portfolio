@@ -9,20 +9,26 @@
 <section>
     <div id="about" class="flex wrap">
         <div class="me-img">
-            <img id="me" src="assets/ressources/images/me.jpg" alt="me">
+            <div class="me-ring">
+                <img id="me" src="assets/ressources/images/me.jpg" alt="me">
+            </div>
         </div>
         <div class="me-txt">
-            <p>Simon PATRY</p>
-            <p>25 ans</p>
-            <p>simonpatry12@gmail.com</p>
-            <p>06 65 72 43 16</p>
+            <h2>BIENVENU</h2>
+            <ul class="id">
+                <li><i class="fas fa-hand-point-left fa-nav"></i><p>Simon PATRY</p></li>
+                <li><i class="fas fa-birthday-cake fa-nav"></i><p>Age: 25 ans</p></li>
+                <li><i class="fas fa-envelope fa-nav"></i><p>Mail: simonpatry12@gmail.com</p></li>
+                <li><i class="fas fa-phone-square-alt fa-nav"></i><p>Phone: 06 65 72 43 16</p></li>
+            </ul>
+            <hr>
             <p>Bonjour à toi, cher incconu, quel plaisir de te trouver ici, sache que tu es le bienvenu chez moi !</p>
             <p>Je ne me présente pas, on atteris rarement ici par hasard.. mais je vais tout de même vous parler un peu de moi</p>
             <p>On va évidemment passé les détails: simon, 25 ans, développeur web , bien sûr ! mais ce n'est pas tout: je dirais bien que j'aime le sport, mais.. bon si, un peu quand même. Mais ce n'est pas ma grande passion, j'aime les jeux de stratégie d'énigmes, j'aime grind de manière général, être en état perpétuel d'évolution. J'apprend à dessiner (je posterais surement quelques projets que je trouve plutôt sympas), j'aime jouer et écouter tout genre de musiques (les grand écarts entre thomas fersen, les cowboys fringuants et nightwish sont des plus stimulants pour moi haha)</p>
         </div>
     </div>
     <div class="skills flex wrap translucide">
-        <h1>Compétences</h1>
+        <h2>Compétences</h3>
         <div class="skill-bar"><p class="skill-name" id="html" >HTML</p></div>
         <div class="skill-bar"><p class="skill-name" id="css">CSS</p></div>
         <div class="skill-bar"><p class="skill-name" id="js">JS</p></div>
@@ -42,21 +48,19 @@
                 <legend>Ecole de développement logiciels</legend>
                 <p>Formation en autonomie complète sur le langage C et sur les bases de la programmation en générale. Branche graphique: réalisation d'une série de projets avec un rendu visuel, conception de moteurs graphiques avec certaines techniques spécifiques (raycasting)</p>
             </article>
-            <article>
-                <h3>Avant ça..</h3>
-                <legend>remonter 3 ans en arrière</legend>
-                <p></p>
-            </article>
         </div>
         <div class="block-exp flex wrap">
+            <h2>Experience</h2>
             <article class="exp">
-                <h2>Empowering Champagne Challenge</h2>
+                <div><h3>Empowering Champagne Challenge</h3><hr></div>
                 <legend>Hackaton - 2nde place</legend>
                 <p>Développement d'un site pour le projet Carbo'Score, une calculatrice qi permet aux viticulteurs de mesurer leur impact carbone à l'échelle de leur exploitation.</p>
                 <a href="href="portfolio#carboscore">">Voir plus..</a>
             </article>
             <article class="exp">
-                <p></p>
+                <div><h3>TCP Transports</h3><hr></div>
+                <legend>Agent de quai</legend>
+                <p>Réception de marchandise, manutention, étiquetage des colis, réorganisation des palettes, redistribution vers les différentes destinations, chargement et déchargement de camions.</p>
             </article>
         </div>
     </div>
@@ -68,10 +72,11 @@
     ></embed>
     </div>-->
     <div id="projectsPage" class="flex wrap translucide">
+        <h2>Projects</h2>
     <?php foreach($projects as $project): ?>
         <div class="preview">
-            <a href="portfolio#<?= $project['name']?>"><img src="<?= $project['image']?>" alt="preview <?= $project['name']?>"></a>
-            <div class="prev-info">
+            <a class="flex" href="portfolio#<?= $project['name']?>"><img class="proj<?= $project['id']?>" src="<?= $project['image']?>" alt="preview <?= $project['name']?>"></a>
+            <div class="prev-info flex wrap">
                 <h3><?= $project['name']?></h3>
                 <p>Categorie: <?= $project['category']?></p>
             </div>

@@ -18,26 +18,6 @@
     --hover-color: #33E608;
 }
 
-.dark {
-    --text-primary: #FEEEBB;
-    --text-secondary: #FEEEBB;
-    --bg-primary: #23232e;
-    --bg-secondary: #141418;
-}
-    
-.light {
-    --text-primary: #1f1f1f;
-    --text-secondary: #000000;
-    --bg-primary: #ffffff;
-    --bg-secondary: #e4e4e4;
-}
-
-.solar {
-    --text-primary: #576e75;
-    --text-secondary: #35535c;
-    --bg-primary: #fdf6e3;
-    --bg-secondary: #f5e5b8;
-}
 
 .translucide{
     background-color: rgba(20, 20, 24, 0.9);
@@ -47,10 +27,10 @@ html {
     color:var(--text-primary);
     font-family: var(--ff), sans-serif;
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
-    color: white;
     /*background: linear-gradient(
         90deg,
         black 0%,
@@ -164,11 +144,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .fa-nav {
-    color: #33E608;
-}
-
-.fa-nav,
-.fa-nav {
     transition: var(--transition-speed);
 }
 
@@ -185,6 +160,13 @@ main {
     margin:0;
 }
 
+h2{
+    font-size:4em;
+    width:100%;
+    text-align:center;
+    margin: 1em;
+}
+
 video {
     z-index:-1;
     object-fit: cover;
@@ -192,14 +174,14 @@ video {
     height: 100vh;
     position: fixed;
     top: 0;
-    left: 8em;
   }
 
 hr{
     width:30%;
-    border: 3px solid var(--hr-color);
-    margin: 0.5em 0;
+    border: 0.1em solid var(--hr-color);
+    margin:0.5em 0;
 }
+
     /********************************/
     /*        Hero container        */
     /********************************/
@@ -218,21 +200,23 @@ hr{
     
 }
 
+.hero-container h1{
+    font-size: 9em;
+}
+
 .hero-container p{
-    font-size:4em;
+    font-size:5em;
+    color: var(--hr-color);
     margin-right:0.5em;
 }
 
 .parent {
     white-space: nowrap;
-    font-size: 4em;
+    font-size: 5em;
     position: relative;
     
 }
 
-.border {
-    border-bottom: solid 3px white;
-}
 
 /* Animation */
 .parent {
@@ -255,23 +239,49 @@ hr{
     justify-content:space-around;
 }
 
-#about #me{
-    border-radius:50%;
-    transform: rotate(-20deg);
-    width:50%;
-}
-
 #about .me-txt {
     font-size: 2em;
-    width:50%;
+    width:60%;
     padding:2em;
     margin:3em 0;
 }
 
 #about .me-img{
-    width:50%;
+    width:40%;
     margin:auto;
-    text-align:center
+    text-align:center;
+}
+
+#about .me-ring{
+    width:65%;
+    margin:auto;
+    border: 0.5em solid var(--hr-color);
+    border-radius:50%;
+}
+
+#about #me{
+    border-radius:50%;
+    transform: rotate(-20deg);
+    width:100%;
+}
+
+.me-txt h2{
+    text-align: left;
+    font-size:2em;
+    margin: 0;
+    margin-bottom:1em;
+}
+
+.me-txt .id{
+    list-style-type:none;
+    margin-bottom:1em;
+}
+.me-txt .id li{
+    margin: 0.5em 0;
+}
+.me-txt .id p{
+    margin-left:1em;
+    display:inline;
 }
 
     /********************************/
@@ -279,20 +289,19 @@ hr{
     /********************************/
 
 .skills{
-    font-size:2em;
+    
     justify-content:space-around;
     padding:3em;
 }
 
-.skills h1{
-    font-size:2em;
-    margin:0.5em 0;
+.skills h2{
     width:100%;
     text-align:center;
 }
 
 .skill-bar{
-    margin:1em;
+    font-size:2em;
+    margin:2em 1em;
     border:3px solid #23232E;
     background-color: black;
     width:40%;
@@ -300,12 +309,27 @@ hr{
 
 .skill-bar p{
     padding: 0.5em 1em;
-    background-color: #33E608;
+    background-color: rgba(51, 230, 8, 0.8);
 }
 
 #html{
     width:90%;
 }
+
+#html:hover{
+    animation: load 2s linear;
+}
+
+@keyframes load {
+  from {
+    width:0%
+  }
+
+  to {
+    width:90%;
+  }
+}
+
 
 #css{
     width:90%;
@@ -331,29 +355,28 @@ hr{
     background-color: var(--bg-primary);
     padding:2em;
     margin:auto;
+    justify-content:space-around;
 }
 
 .block-school,
 .block-exp{
     width:45%;
-    font-size:1.5em;
     padding-left: 1em;
-    border-left:2px solid var(--hr-color);
 }
 
-.block-school h2{
-    width:100%;
-    text-align:center;
-}
+
 
 .block-school .school,
 .block-exp .exp{
+    font-size:2em;
+    margin: 1em 0;
     width:100%;
-    padding:0 2em;
+    padding:0 1em;
+    border-left:0.2em solid var(--hr-color);
 }
 .block-school .school p,
 .block-school .exp p{
-    margin: 1em 0;
+    margin-top: 1em;
 }
 
 .block-school .school legend,
@@ -368,21 +391,27 @@ hr{
 
 #projectsPage{
     justify-content:space-around;
-    padding:2em;
+    
 }
 #projectsPage .preview{
     position:relative;
-    width:30%;
+    width:35%;
     border-radius:2em;
+    margin:4em auto;
+    text-align:center;
+    background-color: var(--bg-primary);
 }
 #projectsPage .preview:hover  .prev-info{
     display:block;
 }
+
+#projectsPage .preview a{
+    height:100%;
+}
+
 #projectsPage .preview img{
     width:100%;
     border-radius:2em;
-    box-shadow: 0.5em 0.5em 0.5em black;
-    border:0.1em solid black
 }
 
 #projectsPage .preview .prev-info{
@@ -392,9 +421,8 @@ hr{
     width:100%;
     border-top-left-radius:2em;
     border-top-right-radius:2em;
-    text-align:center;
     display:none;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.8);
 }
 #projectsPage .preview .prev-info h3,
 #projectsPage .preview .prev-info p{
@@ -402,7 +430,10 @@ hr{
     font-size:2em;
 }
 
-
+#projectsPage .preview .proj8{
+    width:40%;
+    margin:auto;
+}
         /********************************/
         /*        projects prev         */
         /********************************/
@@ -591,6 +622,9 @@ hr{
         margin-left: 10em;
         
     }
+    video{
+        left: 8em;
+    }
     .menu{
         display:flex;
     }
@@ -638,6 +672,9 @@ hr{
 @media screen and (min-width: 1024px) {
     main {
         margin-left: 10em;
+    }
+    video{
+        left: 8em;
     }
     .menu{
         display:flex;
