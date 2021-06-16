@@ -6,8 +6,8 @@
 
 :root {
     font-family: 'Open Sans';
-    --text-primary: #FEEEBB;
-    --text-secondary: #FEEEBB;
+    --text-primary: #fff5d5;
+    --text-secondary: #8f8871;
     --bg-primary: #23232e;
     --bg-secondary: #141418;
     --transition-speed: 600ms;
@@ -16,10 +16,12 @@
     --txt-color: #FEEEBB;
     --hr-color: #33E608;
     --hover-color: #33E608;
+    --bg-prim-filter: rgba(35, 35, 46, 0.8);
+    --bg-sec-filter: rgba(20, 20, 24, 0.8);
 }
 
 
-.translucide{
+.filter{
     background-color: rgba(20, 20, 24, 0.9);
 } 
 
@@ -51,6 +53,10 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
     background: var(--text-primary);
+}
+
+.template{
+    margin:auto;
 }
 
 /********************************/
@@ -167,6 +173,10 @@ h2{
     margin: 1em;
 }
 
+p{
+    text-align:justify;
+}
+
 video {
     z-index:-1;
     object-fit: cover;
@@ -214,9 +224,25 @@ hr{
     white-space: nowrap;
     font-size: 5em;
     position: relative;
-    
 }
 
+.cv-link{
+    margin:5em auto;
+    justify-content:space-around;
+    width:100%;
+}
+.cv-link a{
+    border-radius:1em;
+    padding:1.5em;
+    background-color: var(--bg-prim-filter);
+    text-decoration:none;
+    color: var(--text-primary);
+    font-size: 2em;
+}
+
+.cv-link a:hover{
+    background-color: var(--bg-sec-filter);
+}
 
 /* Animation */
 .parent {
@@ -357,6 +383,10 @@ hr{
     margin:auto;
     justify-content:space-around;
 }
+.course .block-exp div,
+.course .block-exp legend{
+    width:100%;
+}
 
 .block-school,
 .block-exp{
@@ -375,17 +405,25 @@ hr{
     border-left:0.2em solid var(--hr-color);
 }
 .block-school .school p,
-.block-school .exp p{
+.block-exp .exp p{
     margin-top: 1em;
 }
 
 .block-school .school legend,
-.block-school .exp legend{
+.block-exp .exp legend{
     font-style:italic;
 }
 
+.block-exp .exp a{
+    margin-top:0.5em;
+    padding:0.5em;
+    background-color: var(--bg-secondary);
+    text-decoration:none;
+    color:var(--text-primary);
+}
+
     /********************************/
-    /*        pages "flip"          */
+    /*       project preview        */
     /********************************/
 
 
@@ -401,6 +439,11 @@ hr{
     text-align:center;
     background-color: var(--bg-primary);
 }
+
+#projectsPage .preview:hover{
+    box-shadow: 0 0 1em 0.3em white;
+}
+
 #projectsPage .preview:hover  .prev-info{
     display:block;
 }
@@ -434,24 +477,85 @@ hr{
     width:40%;
     margin:auto;
 }
-        /********************************/
-        /*        projects prev         */
-        /********************************/
-
-
-
-@keyframes animated-block{
-    from{
-        transform: rotateY(0deg);
-    }
-    to{
-        transform: rotateY(90deg);
-    }
-}
 
 /********************************/
 /*        portfolio             */
 /********************************/
+
+    /********************************/
+    /*          projects            */
+    /********************************/
+
+.project{
+    width:80%;
+    margin: 4em auto;
+    justify-content:space-around;
+    padding:1em;
+    border-radius:2em;
+}
+
+.project h3{
+    text-align:center;
+    width:100%;
+    padding:0.5em;
+    margin: 1em 0;
+    font-size:3em;
+}
+
+.project .text,
+.project .visual{
+    width:45%;
+}
+
+.project .visual{
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.project .text .txt{
+    background-image: url(../ressources/images/notes.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-bottom: 20em;
+}
+
+.project .text .txt .head{
+    margin-bottom:5em;
+    padding:2em 0;
+}
+
+.project .text .txt p
+{
+    margin: 0.5em 4em;
+    font-size: 2em;;
+    text-align: justify;
+    line-height: 2.5em;
+}
+
+.project .visual img{
+    width:100%;
+    padding:2em;
+}
+.project .visual img,
+.project .visual .vid{
+    border-radius:2em;
+    background-color: var(--bg-primary);
+}
+
+.responsive-video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 -> 9/16x100 */
+    overflow: hidden;
+}
+.video {
+    width: 100%;
+    height: 100%;
+    padding:2em;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 
     /********************************/
     /*     projects Gallery         */
@@ -489,27 +593,54 @@ hr{
 }
 
 #gallery{
+    margin:3em;
     width:80%;
-    margin:auto;
-    justify-content: space-between;
+    border:2px solid white;
 }
+
+.slider{
+    margin:0 auto;
+    width:70%;
+    border:2px solid green;
+}
+
+#previous,
+#next{
+    margin:auto;
+    border-radius:50%;
+}
+
+#previous i,
+#next i{
+    color: var(--bg-primary);
+    font-size:4em;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#previous i:hover,
+#next i:hover{
+    color: rgba(51, 230, 8, 0.8);
+}
+
 
 .sliderImage:not(:first-child){
 	display:none;
 }
+
 .sliderImage img{
-    width:80%;
+    width:100%;
+    margin:auto;
 }
 
 .slideShow{
-	animation: reveal 1s linear ;
+	animation: show 1s linear ;
 }
 .slideHide{
 	animation: hide 1s linear;
 }
 
 
-@keyframes reveal {
+@keyframes show {
   from {
     opacity:0.1;
   }
@@ -529,6 +660,16 @@ hr{
   }
 }
 
+
+/********************************/
+/*            CV page           */
+/********************************/
+
+.cv{
+    height:100vh;
+    width:100%;
+}
+
 /********************************/
 /*          Dashboard           */
 /********************************/
@@ -537,47 +678,7 @@ hr{
     /*          projects            */
     /********************************/
 
-.project{
-    width:80%;
-    margin: 2em auto;
-    justify-content:space-between;
-    padding:1em;
-    border-radius:2em;
-}
 
-.project .txtImg{
-    width:80%;
-    margin:auto;
-    justify-content:space-between;
-}
-
-.project .txtImg img,
-.project .txtImg .text{
-    width:50%;
-    font-size:2em;
-    padding:1em;
-}
-
-.project h3{
-    text-align:center;
-    width:100%;
-    padding:0.5em;
-    font-size:3em;
-}
-
-.project .txtImg .text p
-{
-    margin: 0.5em 0;
-    text-align: justify;
-}
-.project .video{
-    width:100%;
-}
-.project .video iframe{
-    width: 90em;
-    height: 60em;
-    margin:auto;
-}
 
 .project .buttons{
     width:100%;
@@ -606,12 +707,6 @@ hr{
 .hide{
     display:none;
 }
-
-/********************************/
-/*        test navbar           */
-/********************************/
-
-
 
 /********************************/
 /*        responsive            */

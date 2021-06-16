@@ -23,6 +23,10 @@ if (isset($_GET['page']))
 			$controller = new Controllers\PortfolioController();
 			$controller -> display();
 		break;
+		case 'cv':
+			$controller = new Controllers\CvController();
+			$controller -> display();
+		break;
 	}
 }
 else if(isset($_GET['ajax'])){

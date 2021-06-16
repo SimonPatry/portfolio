@@ -1,31 +1,45 @@
 <?php foreach($projects as $project): ?>
-    <article id="<?= $project['name']?>" class="project flex wrap">
-        <div class="txtImg flex wrap">
-            <h3><?= $project['name']?></h3>
-            <div class="text">
-                <p>Categorie: <?= $project['category']?></p>
-                <p>Posté le: <?= $project['postDate']?></p>
+    <article id="<?= $project['name']?>" class="project flex wrap filter">
+        
+        <h3><?= $project['name']?></h3>
+        
+        <div class="text flex wrap">
+            <div class="txt">
+                <div class="head">
+                    <p>Categorie: <?= $project['category']?></p>
+                    <p>Posté le: <?= $project['postDate']?></p>
+                </div>
                 <p>Description:</p>
                 <p><?= $project['description']?></p>
             </div>
-            <img src="<?= $project['image']?>" alt="preview <?= $project['name']?>">
         </div>
+
+        <div class="visual flex wrap">
+            <div class="img">
+                <img src="<?= $project['image']?>" alt="preview <?= $project['name']?>">
+            </div>
         <?php if($project['video'] != "" ): ?>
-            <div class="video flex">
-                <iframe src="<?= $project['video']?>" title="<?= $project['name']?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="vid responsive-video">
+                <iframe class="video" src="<?= $project['video']?>" title="<?= $project['name']?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         <?php endif; ?>
-        <div id="gallery" class="flex wrap">
-            <div class="slider">
+        </div>
+
+        <div id="gallery" class="flex">
+            <button id="previous"><i class="fas fa-arrow-circle-left"></i></button>
+            <div class="slider flex wrap">
+                
                 <?php foreach($gallery as $image): ?>
                     <?php if($image['id_project'] == $project['id']): ?>
-                        <div class="sliderImage"><img src="<?= $image['src'] ?>" alt ="<?= $image['alt'] ?>"></div>
+                        <div class="sliderImage flex">
+                            <img src="<?= $image['src'] ?>" alt ="<?= $image['alt'] ?>">
+                        </div>
                     <?php endif; ?>
                 <?php endforeach; ?>
-                <button id="previous"><i class="fas fa-arrow-circle-left"></i></button>
-                <button id="next"><i class="fas fa-arrow-circle-right"></i></button>
+                
             </div>
+            <button id="next"><i class="fas fa-arrow-circle-right"></i></button>
         </div>
     </article>
-<?php endforeach; ?>
 
+<?php endforeach; ?>

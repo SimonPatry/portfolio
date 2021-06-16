@@ -1,8 +1,12 @@
-<section class="hero flex wrap translucide">  
+<section class="hero flex wrap filter">  
     <div class="hero-container flex wrap">
         <h1>Simon PATRY</h1>
         <div class="flex wrap">
             <p>I am <div class="parent"></div></p>
+        </div>
+        <div class="cv-link flex">
+            <a href="assets/ressources/cv/CV_Simon_PATRY.pdf" download>Télecharger mon CV</a>
+            <a href="cv">Voir mon CV</a>
         </div>
     </div>
 </section>
@@ -27,7 +31,7 @@
             <p>On va évidemment passé les détails: simon, 25 ans, développeur web , bien sûr ! mais ce n'est pas tout: je dirais bien que j'aime le sport, mais.. bon si, un peu quand même. Mais ce n'est pas ma grande passion, j'aime les jeux de stratégie d'énigmes, j'aime grind de manière général, être en état perpétuel d'évolution. J'apprend à dessiner (je posterais surement quelques projets que je trouve plutôt sympas), j'aime jouer et écouter tout genre de musiques (les grand écarts entre thomas fersen, les cowboys fringuants et nightwish sont des plus stimulants pour moi haha)</p>
         </div>
     </div>
-    <div class="skills flex wrap translucide">
+    <div class="skills flex wrap filter">
         <h2>Compétences</h3>
         <div class="skill-bar"><p class="skill-name" id="html" >HTML</p></div>
         <div class="skill-bar"><p class="skill-name" id="css">CSS</p></div>
@@ -51,27 +55,20 @@
         </div>
         <div class="block-exp flex wrap">
             <h2>Experience</h2>
-            <article class="exp">
+            <article class="exp flex wrap">
                 <div><h3>Empowering Champagne Challenge</h3><hr></div>
                 <legend>Hackaton - 2nde place</legend>
                 <p>Développement d'un site pour le projet Carbo'Score, une calculatrice qi permet aux viticulteurs de mesurer leur impact carbone à l'échelle de leur exploitation.</p>
-                <a href="href="portfolio#carboscore">">Voir plus..</a>
+                <a href="portfolio#carboscore">Voir plus..</a>
             </article>
-            <article class="exp">
+            <article class="exp flex wrap">
                 <div><h3>TCP Transports</h3><hr></div>
                 <legend>Agent de quai</legend>
                 <p>Réception de marchandise, manutention, étiquetage des colis, réorganisation des palettes, redistribution vers les différentes destinations, chargement et déchargement de camions.</p>
             </article>
         </div>
     </div>
-    <!--<div>
-    <embed
-        src="assets\ressources\cv\CV_Simon_PATRY.pdf"
-        height="100%"
-        width="100%"
-    ></embed>
-    </div>-->
-    <div id="projectsPage" class="flex wrap translucide">
+    <div id="projectsPage" class="flex wrap filter">
         <h2>Projects</h2>
     <?php foreach($projects as $project): ?>
         <div class="preview">
