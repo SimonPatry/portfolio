@@ -1,5 +1,5 @@
-<section>
-	<form method="post">
+<section class="log flex wrap">
+	<form method="post" class="adminlog flex wrap">
 		<p>
 			<label for='identifiant'>Identifiant</label>
 			<input type="text" name="identifiant" id="identifiant">
@@ -8,7 +8,9 @@
 			<label for='pw'>Mot de passe</label>
 			<input type="password" name="pw" id="pw">
 		</p>
-		<button id="adminform">Se connecter</button>
+		<div class="flex ">
+			<button id="adminform">Se connecter</button>
+		</div>
 		<p class="error"><?= $this-> message ?></p>
 	</form>
 </section>

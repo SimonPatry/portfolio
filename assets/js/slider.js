@@ -2,6 +2,8 @@
 let images;
 
 function nextImage(){
+    images = document.querySelectorAll(`.gall${this.dataset.id}`);
+    console.log(images);
     for(let i = 0; i < images.length; i++)
     {
         let image = getComputedStyle(images[i]);
@@ -23,14 +25,13 @@ function nextImage(){
                     images[i + 1].classList.add("slideShow");
                     images[i + 1].style.display = "block";
                 }
-                
-                
             }, 1000);
         }
     }
 }
 
 function previousImage(){
+    images = document.querySelectorAll(`.gall${this.dataset.id}`);
     for(let i = 0; i < images.length; i++)
     {
         let image = getComputedStyle(images[i]);
@@ -60,8 +61,10 @@ function previousImage(){
 }
 
 document.addEventListener("DOMContentLoaded",function(){
-    images = document.querySelectorAll('.sliderImage');
-    document.getElementById('next').addEventListener('click', nextImage);
-    document.getElementById('previous').addEventListener('click', previousImage);
-    setInterval(nextImage, 5000);
+    document.querySelectorAll('.next').forEach((btn)=>{
+        btn.addEventListener('click', nextImage);
+    });
+    document.querySelectorAll('.previous').forEach((btn)=>{
+        btn.addEventListener('click', previousImage);
+    });
 });

@@ -1,21 +1,14 @@
 Options +FollowSymlinks
 RewriteEngine on
 
-#Admin
 RewriteRule ^admin$ index.php?page=admin [L]
 
-#Accueil
 RewriteRule ^accueil$ index.php [L]
 
-#portfolio
 RewriteRule ^portfolio$ index.php?page=portfolio [L]
 
-#CV
 RewriteRule ^cv$ index.php?page=cv [L]
 
-#dashboard
 RewriteRule ^dashboard$ index.php?page=dashboard [L]
 
-
-#Contact
 RewriteRule ^contact$ index.php?page=contact [L]

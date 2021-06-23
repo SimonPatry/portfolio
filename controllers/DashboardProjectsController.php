@@ -23,6 +23,10 @@ class DashboardProjectsController
 		
 		if ($project->cat = "C#")
 			$cat = 2;
+		if ($project->cat = "web")
+			$cat = 1;
+		if ($project->cat = "C")
+			$cat = 3;
         $datas = [$project->name, $cat, $project->description, $project->image, $project->video, $project->id];
 		$this -> project -> editProject($datas);
 	}
@@ -41,7 +45,6 @@ class DashboardProjectsController
 			$name = $_POST['name'];
 			$desc = $_POST['desc'];
 			$id_categories = $_POST['cat'];
-			var_dump($_FILES); 
 			if (!empty($_FILES['image']['name']))
 			{
 				$image_name = $_FILES['image']['name'] ;
@@ -55,7 +58,6 @@ class DashboardProjectsController
 			}
 			$video = $_POST['vid'];
 			$date = date("Y-m-d");
-			var_dump($name, $desc, $image, $video);
 			$this -> project -> addProject($name, $desc, $image, $video, $date, $id_categories);
 		}
 	}

@@ -2,41 +2,45 @@
     <div class="hero-container flex wrap">
         <h1>Simon PATRY</h1>
         <div class="flex wrap">
-            <p>I am <div class="parent"></div></p>
+            <p>Je suis <div class="hero-text"></div></p>
         </div>
         <div class="cv-link flex">
-            <a href="assets/ressources/cv/CV_Simon_PATRY.pdf" download>Télecharger mon CV</a>
-            <a href="cv">Voir mon CV</a>
+            <a href="assets/ressources/cv/CV_Simon_PATRY.pdf" title="download CV" download>Télecharger le CV</a>
+            <a href="cv" title="go see CV">Voir mon CV</a>
         </div>
     </div>
 </section>
 <section>
     <div id="about" class="flex wrap">
-        <div class="me-img">
+        <div class="me-img flex">
             <div class="me-ring">
                 <img id="me" src="assets/ressources/images/me.jpg" alt="me">
             </div>
         </div>
         <div class="me-txt">
-            <h2>BIENVENU</h2>
             <ul class="id">
-                <li><i class="fas fa-hand-point-left fa-nav"></i><p>Simon PATRY</p></li>
+                <li><i class="fas fa-hand-point-left fa-nav"></i><p><?= $contact['firstName'] ?> <?= $contact['lastName'] ?></p></li>
                 <li><i class="fas fa-birthday-cake fa-nav"></i><p>Age: 25 ans</p></li>
-                <li><i class="fas fa-envelope fa-nav"></i><p>Mail: simonpatry12@gmail.com</p></li>
-                <li><i class="fas fa-phone-square-alt fa-nav"></i><p>Phone: 06 65 72 43 16</p></li>
+                <li><i class="fas fa-envelope fa-nav"></i><p>Mail: <?= $contact['mail'] ?></p></li>
+                <li><i class="fas fa-phone-square-alt fa-nav"></i><p>Tel: <?= $contact['phone'] ?></p></li>
+                <li><i class="fab fa-git fa-nav"></i><p><a href="https://github.com/SimonPatry">https://github.com/SimonPatry</a></p></li>
             </ul>
             <hr>
-            <p>Bonjour à toi, cher incconu, quel plaisir de te trouver ici, sache que tu es le bienvenu chez moi !</p>
-            <p>Je ne me présente pas, on atteris rarement ici par hasard.. mais je vais tout de même vous parler un peu de moi</p>
-            <p>On va évidemment passé les détails: simon, 25 ans, développeur web , bien sûr ! mais ce n'est pas tout: je dirais bien que j'aime le sport, mais.. bon si, un peu quand même. Mais ce n'est pas ma grande passion, j'aime les jeux de stratégie d'énigmes, j'aime grind de manière général, être en état perpétuel d'évolution. J'apprend à dessiner (je posterais surement quelques projets que je trouve plutôt sympas), j'aime jouer et écouter tout genre de musiques (les grand écarts entre thomas fersen, les cowboys fringuants et nightwish sont des plus stimulants pour moi haha)</p>
+        </div>
+        <div class="about-me">
+            <div class="id-txt">
+                <p>Bonjour à toi, cher incconu, quel plaisir de te trouver ici, sache que tu es le bienvenu chez moi !</p>
+                <p>Je ne me présente pas, on atteris rarement ici par hasard.. mais je vais tout de même vous parler un peu de moi</p>
+                <p>On va évidemment passé les détails: simon, 25 ans, développeur web , bien sûr ! mais ce n'est pas tout: je dirais bien que j'aime le sport, mais.. bon si, un peu quand même. Mais ce n'est pas ma grande passion, j'aime les jeux de stratégie d'énigmes, j'aime grind de manière général, être en état perpétuel d'évolution. J'apprend à dessiner (je posterais surement quelques projets que je trouve plutôt sympas), j'aime jouer et écouter tout genre de musiques (les grand écarts entre thomas fersen, les cowboys fringuants et nightwish sont des plus stimulants pour moi haha)</p>
+            </div>
         </div>
     </div>
     <div class="skills flex wrap filter">
         <h2>Compétences</h3>
         <div class="skill-bar"><p class="skill-name" id="html" >HTML</p></div>
-        <div class="skill-bar"><p class="skill-name" id="css">CSS</p></div>
         <div class="skill-bar"><p class="skill-name" id="js">JS</p></div>
         <div class="skill-bar"><p class="skill-name" id="php">PHP</p></div>
+        <div class="skill-bar"><p class="skill-name" id="css">CSS</p></div>
         <div class="skill-bar"><p class="skill-name" id="mysql">MySQL</p></div>
     </div>
     <div class="course flex wrap">
@@ -44,12 +48,12 @@
             <h2>Formation</h2>
             <article class="school">
                 <div><h3>3W Academy</h3><hr></div>
-                <legend>Ecole de développement Web</legend>
+                <p>Ecole de développement Web</p>
                 <p>Formation de 4 mois sur les langages de bases du Web: HTML, CSS, javascipt, PHP et MySQL. Introduction aux CMS(wordpress) et aux frameworks(symfony, vueJS).Apprentissage de la construction de base d'un site entier ( façade et base de données)</p>
             </article>
             <article class="school">
                 <div><h3>Ecole 42</h3><hr></div>
-                <legend>Ecole de développement logiciels</legend>
+                <p>Ecole de développement logiciels</p>
                 <p>Formation en autonomie complète sur le langage C et sur les bases de la programmation en générale. Branche graphique: réalisation d'une série de projets avec un rendu visuel, conception de moteurs graphiques avec certaines techniques spécifiques (raycasting)</p>
             </article>
         </div>
@@ -57,13 +61,13 @@
             <h2>Experience</h2>
             <article class="exp flex wrap">
                 <div><h3>Empowering Champagne Challenge</h3><hr></div>
-                <legend>Hackaton - 2nde place</legend>
+                <p>Hackaton - 2nde place</p>
                 <p>Développement d'un site pour le projet Carbo'Score, une calculatrice qi permet aux viticulteurs de mesurer leur impact carbone à l'échelle de leur exploitation.</p>
                 <a href="portfolio#carboscore">Voir plus..</a>
             </article>
             <article class="exp flex wrap">
                 <div><h3>TCP Transports</h3><hr></div>
-                <legend>Agent de quai</legend>
+                <p>Agent de quai</p>
                 <p>Réception de marchandise, manutention, étiquetage des colis, réorganisation des palettes, redistribution vers les différentes destinations, chargement et déchargement de camions.</p>
             </article>
         </div>
@@ -72,7 +76,7 @@
         <h2>Projects</h2>
     <?php foreach($projects as $project): ?>
         <div class="preview">
-            <a class="flex" href="portfolio#<?= $project['name']?>"><img class="proj<?= $project['id']?>" src="<?= $project['image']?>" alt="preview <?= $project['name']?>"></a>
+            <a class="flex" href="portfolio#<?= $project['name']=preg_replace('/ /', '', $project['name']); ?>"><img class="proj<?= $project['id']?>" src="<?= $project['image']?>" alt="preview <?= $project['name']?>"></a>
             <div class="prev-info flex wrap">
                 <h3><?= $project['name']?></h3>
                 <p>Categorie: <?= $project['category']?></p>

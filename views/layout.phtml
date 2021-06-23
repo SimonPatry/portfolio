@@ -21,16 +21,16 @@
                             <img src="assets/ressources/images/profil.jpg" alt="profil picture" class="profil">
                         </a>
                     </li>
-                    <li class="nav-item">    
+                    <li class="name nav-item">    
                         <?php if(isset($_SESSION['admin'])): ?>
                         <a class="login nav-link" href="dashboard">
                             <i class="fas fa-flushed fa-nav"></i>
-                            <span class="link-text">SIMON</span>
+                            <span class="name link-text">SIMON PATRY</span>
                         </a>
                         <?php else: ?>
                         <a class="login nav-link" href="admin">
                             <i class="fas fa-flushed fa-nav"></i>
-                            <span class="link-text">SIMON</span>
+                            <span class="link-text">SIMON PATRY</span>
                         </a>
                         <?php endif; ?>
                     </li>
@@ -50,12 +50,6 @@
                         <a href="cv" class="nav-link">
                             <i class="fas fa-id-badge fa-nav"></i>
                             <span class="link-text">CV</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact" class="nav-link">
-                            <i class="fas fa-file-contract fa-nav"></i>
-                            <span class="link-text">CONTACT</span>
                         </a>
                     </li>
                     <?php if(isset($_SESSION['admin'])): ?>
@@ -83,6 +77,5 @@
     </body>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/heroContainer.js"></script>
-    <script src="assets/js/turnPage.js"></script>
     <script src="assets/js/slider.js"></script>
 </html>

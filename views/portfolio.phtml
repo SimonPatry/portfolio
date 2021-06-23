@@ -9,8 +9,11 @@
                     <p>Categorie: <?= $project['category']?></p>
                     <p>Posté le: <?= $project['postDate']?></p>
                 </div>
-                <p>Description:</p>
-                <p><?= $project['description']?></p>
+                <div class="description">
+                    <p>Description:</p>
+                    <hr>
+                    <p><?= $project['description']?></p>    
+                </div>
             </div>
         </div>
 
@@ -26,19 +29,19 @@
         </div>
 
         <div id="gallery" class="flex">
-            <button id="previous"><i class="fas fa-arrow-circle-left"></i></button>
+            <button class="previous" data-id="<?= $project['name']=preg_replace('/ /', '', $project['name']) ?>"><i class="fas fa-arrow-circle-left"></i></button>
             <div class="slider flex wrap">
                 
                 <?php foreach($gallery as $image): ?>
                     <?php if($image['id_project'] == $project['id']): ?>
-                        <div class="sliderImage flex">
+                        <div class="sliderImage gall<?= $project['name']=preg_replace('/ /', '', $project['name']) ?> flex">
                             <img src="<?= $image['src'] ?>" alt ="<?= $image['alt'] ?>">
                         </div>
                     <?php endif; ?>
                 <?php endforeach; ?>
                 
             </div>
-            <button id="next"><i class="fas fa-arrow-circle-right"></i></button>
+            <button class="next" data-id="<?= $project['name']=preg_replace('/ /', '', $project['name']) ?>"><i class="fas fa-arrow-circle-right"></i></button>
         </div>
     </article>
 

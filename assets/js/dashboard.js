@@ -117,7 +117,7 @@ function showProjectForm(){
     let art = this.parentNode.parentNode;
     art.classList.toggle("hide");
 
-    document.querySelector('.save').addEventListener('click',showProjectForm);
+    
     console.log(art);
     if (art.dataset.name == "form")
     {
@@ -168,10 +168,14 @@ function projectsList(event){
         delProj.forEach((deletePro)=>{
             deletePro.addEventListener('click', delProject);
         });
+        let saveEdit = document.querySelectorAll('.save')
+        saveEdit.forEach((project)=>{
+            project.addEventListener('click',showProjectForm);
+        });
         let addImage = document.querySelectorAll('img');
         addImage.forEach((add)=>{
             add.addEventListener('click', selectImage);
-        })
+        });
         document.getElementById("addProj").addEventListener('click', addProject);
         console.log(document.getElementById("addProj"));
     });
@@ -189,6 +193,28 @@ function galleryTable(event=null){
     });
 }
 
+function updateContactInfos(event){
+    console.log("coucou");
+    event.preventDefault();
+    let form = document.getElementById('form');
+    let  contact = {
+        firstName: document.getElementById('firstname').value,
+        lastName: document.getElementById('lastname').value,
+        mail: document.getElementById('mail').value,
+        phone: document.getElementById('phone').value
+    }
+    project = JSON.stringify(contact);
+    let options = {
+        method : 'POST',
+        body : project,
+        headers:{'Content-Type':'application/json'}
+    }
+    fetch("index.php?page=contact", options)
+    .then(function(){
+        //window.location.href="dashboard";
+    })
+}
+
 /********************************************************/
 /*                      DOM
 /********************************************************/
@@ -196,5 +222,6 @@ function galleryTable(event=null){
 document.addEventListener("DOMContentLoaded",function(){
     document.getElementById('projects').addEventListener('click', projectsList);
     document.getElementById('categories').addEventListener("click", categoriesTable);
-    document.getElementById('gallery').addEventListener('click', galleryTable);
+    //document.getElementById('gallery').addEventListener('click', galleryTable);
+    document.getElementById('updateContact').addEventListener('click', updateContactInfos);
 });

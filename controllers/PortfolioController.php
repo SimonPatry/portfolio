@@ -15,7 +15,7 @@ class PortfolioController
 	{
         $projects = $this -> project -> getAllProjects();
 		$gallery = $this -> gallery -> getAllGallery();
-		$template = "views/Portfolio.phtml";
+		$template = "views/portfolio.phtml";
         include 'views/layout.phtml';
 	}
 }

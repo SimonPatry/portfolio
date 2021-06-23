@@ -6,8 +6,8 @@ let i = 0;
 function changeHeroText()
 {
     /* "looping" with setInterval + incrementation/reset */
-    list = ['a Developper','a Gamer','Inevitable..'];
-    document.querySelector(".parent").innerHTML = list[i];
+    list = ['Développeur','Gamer','Inévitable..'];
+    document.querySelector(".hero-text").innerHTML = list[i];
     i++;
     if(i == 3)
         i = 0;

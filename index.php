@@ -27,6 +27,10 @@ if (isset($_GET['page']))
 			$controller = new Controllers\CvController();
 			$controller -> display();
 		break;
+		case 'contact':
+			$controller = new Controllers\DashboardController();
+			$controller -> updateContact();
+		break;
 	}
 }
 else if(isset($_GET['ajax'])){
