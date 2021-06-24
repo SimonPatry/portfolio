@@ -1,25 +1,25 @@
 <section>
+    <h3>Projets</h3>
     <?php foreach($projects as $project): ?>
         <article data-name="form" data-id="<?= $project['id'] ?>" class="project hide">
             <form method="post" class="form" id="<?= $project['id'] ?>">
                 <div>
                     <label for="name">Nom:</label>
-                    <input class="name" name="name" value="<?= $project['name']?>"></input>
+                    <input class="name" name="name" id="name" value="<?= $project['name']?>">
                     <div class="text">
                         <label for="cat">Categorie:</label>
-                        <select name="cat">
+                        <select name="cat" class="cat" id="cat">
                             <option value="1">Web</option>
                             <option value="2">C#</option>
                             <option value="3">C</option>
                         </select>
-                        <input class="cat" name="cat" type="text" value="<?= $project['category']?>"></input>
                         <p>Description:</p>
                         <textarea class="desc"><?= $project['description']?></textarea>
                     </div>
-                    <label for="image">Image:</label>
-                    <input class="image" type="text" name="image" value="<?= $project['image']?>"></input>
-                    <label for="video">video(embed):</label>
-                    <input class="vid" type="text" name="video" value="<?= $project['video']?>"></input>
+                    <label for="img">Image:</label>
+                    <input class="image" type="text" name="img" id="img" value="<?= $project['image']?>">
+                    <label for="vid">video(embed):</label>
+                    <input class="vid" type="text" name="vid" id="vid" value="<?= $project['video']?>">
                 </div>
                 <button type="button" data-id="<? $project['id'] ?>" class="save"><i class="fas fa-pen-nib">  Edit</i></button>
             </form>
@@ -48,7 +48,7 @@
                 </div>
             <?php if($project['video'] != "" ): ?>
                 <div class="vid responsive-video">
-                    <iframe class="video" src="<?= $project['video']?>" title="<?= $project['name']?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="video" src="<?= $project['video']?>" title="<?= $project['name']?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             <?php endif; ?>
             </div>
@@ -63,7 +63,7 @@
         <form id="newProj" method="post" class="form" enctype="multipart/form-data">
             <div >
                 <label for="name">Nom:</label>
-                <input class="name" name="name"></input>
+                <input class="name" name="name">
                 <div class="text">
                     <label for="cat">Categorie:</label>
                     <select name="cat">
@@ -72,12 +72,12 @@
                         <option value="3">C</option>
                     </select>
                     <label for="desc">Description:</label>
-                    <textarea name="desc" class="desc"></textarea>
+                    <textarea name="desc" id="desc" class="desc"></textarea>
                 </div>
                 <label for="image">Image</label>
-                <input type="file" name="image" class="image-menus"></input>
+                <input type="file" name="image" id="image" class="image-menus">
                 <label for="video">video(embed):</label>
-                <input class="vid" type="text" name="video"></input>
+                <input class="vid" type="text" name="video" id="video">
                 <button id="addProj" type="button" class="add"><i class="fas fa-pen-nib">ajouter</i></button>
             </div>
         </form>

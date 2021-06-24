@@ -8,8 +8,8 @@ class Gallery extends Database
     public function addGallery($datas)
     {
         $this -> modifyOne("
-        INSERT INTO project(id_project, src, alt)
-        VALUES (?, ?, ?)", $datas->id_project, $datas->src, $datas->alt);
+        INSERT INTO gallery (id_project, src, alt)
+        VALUES (?, ?, ?)", [$datas[2], $datas[0], $datas[1]]);
     }
     
     public function delImage($id)
@@ -18,7 +18,15 @@ class Gallery extends Database
         DELETE FROM gallery
     	WHERE id = ? ", [$id]);
     }
-    
+    public function editGallery($datas)
+    {
+        $this -> modifyOne("
+        UPDATE gallery SET
+        id_project = ?,
+        src = ?,
+        alt = ?,
+        WHERE id = ?" , $datas);
+    }
     public function getGalleryById($id):array
     {
     	return $this -> findOne("

@@ -6,10 +6,11 @@
         <meta name="description" content="Simon PATRY">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="assets/css/main.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/fontawesome.min.css">
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/brands.min.css">
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/solid.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     </head>
     <body class="flex wrap">
     <video src="assets/ressources/images/bg-main.mov" autoplay loop playsinline muted></video>
@@ -20,19 +21,6 @@
                         <a href="accueil" class=" home">
                             <img src="assets/ressources/images/profil.jpg" alt="profil picture" class="profil">
                         </a>
-                    </li>
-                    <li class="nav-item">    
-                        <?php if(isset($_SESSION['admin'])): ?>
-                        <a class="login nav-link" href="dashboard">
-                            <i class="fas fa-flushed fa-nav"></i>
-                            <span class="link-text">SIMON</span>
-                        </a>
-                        <?php else: ?>
-                        <a class="login nav-link" href="admin">
-                            <i class="fas fa-flushed fa-nav"></i>
-                            <span class="link-text">SIMON</span>
-                        </a>
-                        <?php endif; ?>
                     </li>
                     <li class="nav-item">
                         <a href="accueil" class="nav-link">
@@ -50,6 +38,12 @@
                         <a href="" id="categories" class="nav-link">
                             <i class="fas fa-clipboard-list fa-nav"></i>
                             <span class="link-text">CATEGORIES</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href=""  id="imgGallery" class="nav-link">
+                            <i class="fas fa-image fa-nav"></i>
+                            <span class="link-text">GALLERY</span>
                         </a>
                     </li>
                     <?php if(isset($_SESSION['admin'])): ?>
@@ -73,7 +67,7 @@
         <main class="dashMain">
             <section id="content" class="flex wrap">
                 <h2>Infos persos:</h2>
-                <form id="form" method="post" class="flex wrap"s>
+                <form id="form" method="post" class="flex wrap">
                     <input id="firstname" value="<?= $contact['firstName'] ?>">
                     <input id="lastname" value="<?= $contact['lastName'] ?>">
                     <input id="mail" value="<?= $contact['mail'] ?>">

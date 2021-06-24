@@ -1,4 +1,5 @@
-<div>
+<section class="filter galleryArray">
+    <h3>Gallerie</h3>
     <table id="dashboardGallery">
         <tr>
             <th>Project</th>
@@ -8,24 +9,40 @@
         </tr>
         <?php foreach($gallery as $image): ?>
         <tr>
-            <td><?= $image['id_project'] ?></td>
-            <td><img  src="<?= $image['src'] ?>"></td>
+            <?php foreach($projects as $project): ?>
+                <?php if($project['id'] == $image['id_project']): ?>
+                    <td><?= $project['name'] ?></td>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            <td><img  src="<?= $image['src'] ?>" alt="<?= $image['alt'] ?>"></td>
             <td><?= $image['alt'] ?></td>
             <td><a href="#" class="delImg" data-id="<?= $image['id'] ?>"><i class="fas fa-trash-alt"></i></a></td>
         </tr>
         <?php endforeach; ?>
     </table>
-</div>
-<div>
-    <label for="src">Src:</label>
-    <input class="src" name="src" type="text">
-    <label for="alt">Alt:</label>
-    <input class="alt" name="" type="text">
-    <label for="proj">Project:</label>
-    <select name="proj">
-    <?php foreach($projects as $project): ?>
-        <option value="<?= $project['id'] ?>"><?= $project['name'] ?></option>
-    <?php endforeach; ?>
-    </select>
-</div>
+</section>
+<section class="filter galleryForm flex wrap">
+    <h3>Nouvelle image</h3>
+    <form method="post" enctype="multipart/form-data" id="newGallery">
+    <ul>
+        <li>
+            <label for="src">Img:</label>
+            <input class="src" name="src" id="src" type="file">
+        </li>
+        <li>
+            <label for="alt">Alt:</label>
+            <input class="alt" name="alt" id="alt" type="text">
+        </li>
+        <li>
+            <label for="proj">Project:</label>
+            <select id="proj" name="proj">
+            <?php foreach($projects as $project): ?>
+                <option value="<?= $project['id'] ?>"><?= $project['name'] ?></option>
+            <?php endforeach; ?>
+            </select>
+        </li>
+    </ul>
+    <button id="addGallery">Ajouter</button>
+    </form>
+</section>
 <script src="assets/js/dashboard.js"></script>

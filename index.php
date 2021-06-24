@@ -78,7 +78,7 @@ else if(isset($_GET['ajax'])){
 			break;
 		case 'delGallery':
 			$controller = new Controllers\GalleryController();
-			$controller -> deleteImage();
+			$controller -> deleteImage($_GET['id']);
 			break;
 	}
 }

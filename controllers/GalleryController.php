@@ -20,25 +20,37 @@ class GalleryController
 	{
 	    $this -> gallery -> delImage($id);
 	}
+	public function editGallery()
+	{
+		/*$datas  = file_get_contents('php://input');
+		$gallery = json_decode($datas);*/
+
+		$gallery = json_decode(file_get_contents('php://input'));
+		
+        $datas = [$gallery->id_project, $gallery->src, $gallery->alt, $gallery->id];
+		$this -> gallery -> editGallery($datas);
+	}
 	public function addImage()
 	{
 		if(!empty($_POST))
 		{
-			$src = $_POST['src'];
+			var_dump($_POST);
+			var_dump($_FILES);
 			$alt = $_POST['alt'];
-			$project = $_POST['id_project'];
-			if (!empty($_FILES['image']['name']))
+			$project = $_POST['proj'];
+			if (!empty($_FILES['src']['name']))
 			{
-				$image_name = $_FILES['image']['name'] ;
-				$tmp_name = $_FILES['image']['tmp_name'];
+				$image_name = $_FILES['src']['name'] ;
+				$tmp_name = $_FILES['src']['tmp_name'];
 				$image = "assets/ressources/images/$image_name";
+				var_dump($image);
 				move_uploaded_file($tmp_name, $image);
 			}
 			else
 			{
 				$image="assets/ressources/images/default.jpg";
 			}
-			$this -> gallery -> addGallery([$src, $alt, $project,]);
+			$this -> gallery -> addGallery([$image, $alt, $project]);
 		}
 	}
 }

@@ -23,12 +23,12 @@
             </div>
         <?php if($project['video'] != "" ): ?>
             <div class="vid responsive-video">
-                <iframe class="video" src="<?= $project['video']?>" title="<?= $project['name']?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="video" src="<?= $project['video']?>" title="<?= $project['name']?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         <?php endif; ?>
         </div>
 
-        <div id="gallery" class="flex">
+        <div class="gallery flex">
             <button class="previous" data-id="<?= $project['name']=preg_replace('/ /', '', $project['name']) ?>"><i class="fas fa-arrow-circle-left"></i></button>
             <div class="slider flex wrap">
                 

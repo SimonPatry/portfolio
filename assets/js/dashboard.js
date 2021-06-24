@@ -15,7 +15,7 @@ function categoriesTable(event=null){
     });
 }
 
-function delCategory(){
+function delCategory(event){
 	if(window.confirm("Etes vous sur de vouloir suppriemr cette catégorie ?")){
 	    event.preventDefault();
 	    let tr = this.parentNode.parentNode;
@@ -26,7 +26,7 @@ function delCategory(){
 	}
 }
 
-function addCategory(){
+function addCategory(event){
     event.preventDefault();
 	let  category = {
 		name: document.getElementById("catName").value,
@@ -47,7 +47,7 @@ function addCategory(){
     })
 }
 
-function editCategory(){
+function editCategory(event){
     event.preventDefault();
     let tr = this.parentNode.parentNode;
     tr.classList.toggle("hide");
@@ -83,11 +83,9 @@ function editCategory(){
 
 function addProject(event)
 {
-    console.log('coucou');
     event.preventDefault();
     let project = document.getElementById('newProj');
     let formData = new FormData(project);
-    console.log(formData);
     fetch('index.php?ajax=addProj',
     {
         method: 'POST',
@@ -100,7 +98,6 @@ function addProject(event)
 
 function delProject(event)
 {
-    console.log("coucou");
     event.preventDefault();
     let confirm = window.confirm("Voulez-vous supprimer le projet ?")
     if(confirm)
@@ -115,10 +112,7 @@ function delProject(event)
 
 function showProjectForm(){
     let art = this.parentNode.parentNode;
-    art.classList.toggle("hide");
-
-    
-    console.log(art);
+    art.classList.toggle("hide");    
     if (art.dataset.name == "form")
     {
         art.nextElementSibling.classList.toggle("hide");
@@ -138,7 +132,6 @@ function showProjectForm(){
         	body : project,
         	headers:{'Content-Type':'application/json'}
         }
-        console.log(options);
         fetch(`index.php?ajax=editProj`, options)
         .then( function (){
 		    projectsList(null);
@@ -147,10 +140,6 @@ function showProjectForm(){
     else{
         art.previousElementSibling.classList.toggle("hide");
     }
-}
-
-function selectImage(){
-    var opener = window.open('file:///assets/ressources/images');
 }
 
 function projectsList(event){
@@ -181,6 +170,35 @@ function projectsList(event){
     });
 }
 
+function addGallery(event)
+{
+    event.preventDefault();
+    let gallery = document.getElementById('newGallery');
+    let formData = new FormData(gallery);
+    fetch('index.php?ajax=addGallery',
+    {
+        method: 'POST',
+        body: formData,
+    })
+    .then(function(){
+
+    })
+}
+
+function delGallery(event)
+{
+    event.preventDefault();
+    let confirm = window.confirm("Voulez-vous supprimer cette image ?")
+    if(confirm)
+	{
+        let id = this.dataset.id;
+        fetch(`index.php?ajax=delGallery&id=${id}`)
+        .then( function(){
+
+        })
+	}
+}
+
 function galleryTable(event=null){
     if (event != null)
         event.preventDefault();
@@ -188,13 +206,14 @@ function galleryTable(event=null){
     .then(response => response.text())
     .then(response => {
         document.getElementById("content").innerHTML = response;
-        document.querySelectorAll(".delCat").forEach(image => {image.addEventListener("click", delGallery)});
-        document.getElementById('newGallery').addEventListener("click", addCategory);
+        document.querySelectorAll(".delImg").forEach(image => {
+            image.addEventListener("click", delGallery)
+        });
+        document.getElementById('addGallery').addEventListener("click", addGallery);
     });
 }
 
 function updateContactInfos(event){
-    console.log("coucou");
     event.preventDefault();
     let form = document.getElementById('form');
     let  contact = {
@@ -211,7 +230,7 @@ function updateContactInfos(event){
     }
     fetch("index.php?page=contact", options)
     .then(function(){
-        //window.location.href="dashboard";
+        window.location.href="dashboard";
     })
 }
 
@@ -222,6 +241,6 @@ function updateContactInfos(event){
 document.addEventListener("DOMContentLoaded",function(){
     document.getElementById('projects').addEventListener('click', projectsList);
     document.getElementById('categories').addEventListener("click", categoriesTable);
-    //document.getElementById('gallery').addEventListener('click', galleryTable);
+    document.getElementById('imgGallery').addEventListener('click', galleryTable);
     document.getElementById('updateContact').addEventListener('click', updateContactInfos);
 });

@@ -20,12 +20,11 @@ class DashboardProjectsController
 		$project = json_decode($datas);
 */
 		$project = json_decode(file_get_contents('php://input'));
-		
 		if ($project->cat = "C#")
 			$cat = 2;
-		if ($project->cat = "web")
+		else if ($project->cat = "web")
 			$cat = 1;
-		if ($project->cat = "C")
+		else if ($project->cat = "C")
 			$cat = 3;
         $datas = [$project->name, $cat, $project->description, $project->image, $project->video, $project->id];
 		$this -> project -> editProject($datas);
