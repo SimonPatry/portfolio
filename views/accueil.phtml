@@ -18,72 +18,74 @@
             </div>
         </div>
         <div class="about-text">
-            <div class="me-txt">
+            <article class="infos-me">
                 <ul class="id">
-                    <li><i class="fas fa-hand-point-left fa-nav"></i><p><?= $contact['firstName'] ?> <?= $contact['lastName'] ?></p></li>
+                    <li><i class="fas fa-hand-point-left fa-nav"></i><p><?=  htmlSpecialChars($contact['firstName']) ?> <?=  htmlSpecialChars($contact['lastName']) ?></p></li>
                     <li><i class="fas fa-birthday-cake fa-nav"></i><p>Age: 25 ans</p></li>
-                    <li><i class="fas fa-envelope fa-nav"></i><p>Mail: <?= $contact['mail'] ?></p></li>
-                    <li><i class="fas fa-phone-square-alt fa-nav"></i><p>Tel: <?= $contact['phone'] ?></p></li>
-                    <li><i class="fab fa-git fa-nav"></i><p><a href="https://github.com/SimonPatry">https://github.com/SimonPatry</a></p></li>
+                    <li><i class="fas fa-envelope fa-nav"></i><p>Mail: <?=  htmlSpecialChars($contact['mail']) ?></p></li>
+                    <li><i class="fas fa-phone-square-alt fa-nav"></i><p>Tel: <?=  htmlSpecialChars($contact['phone']) ?></p></li>
+                    <li><i class="fab fa-git fa-nav"></i><p><a href="https://github.com/SimonPatry" title="github link">https://github.com/SimonPatry</a></p></li>
                 </ul>
                 <hr>
-            </div>
-            <div class="about-me">
+            </article>
+            <article class="about-me">
                 <div class="id-txt">
                     <p>Bonjour à toi, cher inconnu, quel plaisir de te trouver ici, sache que tu es le bienvenu chez moi !</p>
                     <p>Je ne me présente pas, on atteris rarement ici par hasard.. mais je vais tout de même parler un peu de moi</p>
                     <p>On va évidemment passé les détails: simon, 25 ans, développeur web , bien sûr ! mais ce n'est pas tout: je dirais bien que j'aime le sport, mais.. bon si, un peu quand même. Mais ce n'est pas ma grande passion, j'aime les jeux de stratégie d'énigmes, j'aime grind/farm de manière général, être en état perpétuel d'évolution. J'apprend à dessiner (je posterais surement quelques projets que je trouve plutôt sympas), j'aime jouer et écouter tout genre de musiques (les grand écarts entre thomas fersen, les cowboys fringuants et nightwish sont des plus stimulants pour moi haha)</p>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="skills flex wrap filter">
-        <h2>Compétences</h2>
-        <div class="skill-bar"><p class="skill-name" id="html" >HTML</p></div>
-        <div class="skill-bar"><p class="skill-name" id="js">JS</p></div>
-        <div class="skill-bar"><p class="skill-name" id="php">PHP</p></div>
-        <div class="skill-bar"><p class="skill-name" id="css">CSS</p></div>
-        <div class="skill-bar"><p class="skill-name" id="mysql">MySQL</p></div>
-    </div>
-    <div class="course flex wrap">
-        <div class="block-school flex wrap">
-            <h2>Formation</h2>
-            <article class="school">
-                <div><h3>3W Academy</h3><hr></div>
-                <p>Ecole de développement Web</p>
-                <p>Formation de développeur Web: maitrise des langages de base HTML, CSS, javascipt, PHP et MySQL. Introduction aux CMS(wordpress) et aux frameworks(symfony, vueJS).Construction de sites entiers: front, back office, base de données</p>
-            </article>
-            <article class="school">
-                <div><h3>Ecole 42</h3><hr></div>
-                <p>Ecole de développement logiciels</p>
-                <p>Formation en autonomie complète (aucun cours) sur le langage C et sur les bases de la programmation en générale (shell/compilation). Branche graphique: réalisation d'une série de projets avec un rendu visuel, conception de moteurs graphiques avec certaines techniques spécifiques (raycasting)</p>
-            </article>
-        </div>
-        <div class="block-exp flex wrap">
-            <h2>Experience</h2>
-            <article class="exp flex wrap">
-                <div><h3>Empowering Champagne Challenge</h3><hr></div>
-                <p>Hackaton - 2nde place</p>
-                <p>Développement d'un site pour le projet Carbo'Score de la chambre d'agriculture l'aube, une calculatrice qui permet aux viticulteurs de mesurer leur impact carbone à l'échelle de leur exploitation.</p>
-                <a href="portfolio#carboscore">Voir plus..</a>
-            </article>
-            <article class="exp flex wrap">
-                <div><h3>TCP Transports</h3><hr></div>
-                <p>Agent de quai</p>
-                <p>Réception de marchandise, manutention, étiquetage des colis, réorganisation des palettes, redistribution vers les différentes destinations, chargement et déchargement de camions.</p>
             </article>
         </div>
     </div>
-    <div id="projectsPage" class="flex wrap filter">
+</section>
+<section class="skills flex wrap filter">
+    <h2>Compétences</h2>
+    <div class="skill-bar"><p class="skill-name" id="html" >HTML</p></div>
+    <div class="skill-bar"><p class="skill-name" id="js">JS</p></div>
+    <div class="skill-bar"><p class="skill-name" id="php">PHP</p></div>
+    <div class="skill-bar"><p class="skill-name" id="css">CSS</p></div>
+    <div class="skill-bar"><p class="skill-name" id="mysql">MySQL</p></div>
+</section>
+<section class="course flex wrap">
+    <div class="block-school flex wrap">
+        <h2>Formation</h2>
+        <article class="school">
+            <div><h3>3W Academy</h3><hr></div>
+            <p>Ecole de développement Web</p>
+            <p>Formation de développeur Web: maitrise des langages de base HTML, CSS, javascipt, PHP et MySQL. Introduction aux CMS(wordpress) et aux frameworks(symfony, vueJS).Construction de sites entiers: front, back office, base de données</p>
+        </article>
+        <article class="school">
+            <div><h3>Ecole 42</h3><hr></div>
+            <p>Ecole de développement logiciels</p>
+            <p>Formation en autonomie complète (aucun cours) sur le langage C et sur les bases de la programmation en générale (shell/compilation). Branche graphique: réalisation d'une série de projets avec un rendu visuel, conception de moteurs graphiques avec certaines techniques spécifiques (raycasting)</p>
+        </article>
+    </div>
+    <div class="block-exp flex wrap">
+        <h2>Experience</h2>
+        <article class="exp flex wrap">
+            <div><h3>Empowering Champagne Challenge</h3><hr></div>
+            <p>Hackaton - 2nde place</p>
+            <p>Développement d'un site pour le projet Carbo'Score de la chambre d'agriculture de l'aube, une calculatrice qui permet aux viticulteurs de mesurer leur impact carbone à l'échelle de leur exploitation.</p>
+            <a href="portfolio#carboscore">Voir plus..</a>
+        </article>
+        <article class="exp flex wrap">
+            <div><h3>TCP Transports</h3><hr></div>
+            <p>Agent de quai</p>
+            <p>Réception de marchandise, manutention, étiquetage des colis, réorganisation des palettes, redistribution vers les différentes destinations, chargement et déchargement de camions.</p>
+        </article>
+    </div>
+</section>
+<section id="projectsPage" class="filter">
+    <article class="flex wrap">
         <h2>Projects</h2>
-    <?php foreach($projects as $project): ?>
+        <?php foreach($projects as $project): ?>
         <div class="preview">
-            <a class="flex" href="portfolio#<?= $project['name']=preg_replace('/ /', '', $project['name']); ?>"><img class="proj<?= $project['id']?>" src="<?= $project['image']?>" alt="preview <?= $project['name']?>"></a>
+            <a class="flex" href="portfolio#<?= htmlSpecialChars($project['name']=preg_replace('/ /', '', $project['name'])) ?>"><img class="proj<?= $project['id']?>" src="<?=  htmlSpecialChars($project['image']) ?>" alt="preview <?= htmlSpecialChars($project['name']) ?>"></a>
             <div class="prev-info flex wrap">
-                <h3><?= $project['name']?></h3>
-                <p>Categorie: <?= $project['category']?></p>
+                <h3><?=  htmlSpecialChars($project['name']) ?></h3>
+                <p>Categorie: <?= htmlSpecialChars($project['category']) ?></p>
             </div>
         </div>
-    <?php endforeach; ?>
-    </div>
+        <?php endforeach; ?>
+    </article>
 </section>

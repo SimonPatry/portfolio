@@ -24,45 +24,45 @@
                     </li>
                     <li class="name nav-item">    
                         <?php if(isset($_SESSION['admin'])): ?>
-                        <a class="login nav-link" href="dashboard">
+                        <a class="login nav-link" href="dashboard" title="login">
                             <i class="fas fa-flushed fa-nav"></i>
                             <span class="name link-text">SIMON PATRY</span>
                         </a>
                         <?php else: ?>
-                        <a class="login nav-link" href="admin">
+                        <a class="login nav-link" href="admin" title="login">
                             <i class="fas fa-flushed fa-nav"></i>
                             <span class="link-text">SIMON PATRY</span>
                         </a>
                         <?php endif; ?>
                     </li>
                     <li class="nav-item">
-                        <a href="accueil" class="nav-link">
+                        <a href="accueil" class="nav-link" title="home">
                             <i class="fas fa-igloo fa-nav"></i>
                             <span class="link-text">HOME</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="portfolio" class="nav-link">
+                        <a href="portfolio" class="nav-link" title="portfolio">
                             <i class="fas fa-dungeon fa-nav"></i>
                             <span class="link-text">PORTFOLIO</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="cv" class="nav-link">
+                        <a href="cv" class="nav-link" title="CV">
                             <i class="fas fa-id-badge fa-nav"></i>
                             <span class="link-text">CV</span>
                         </a>
                     </li>
                     <?php if(isset($_SESSION['admin'])): ?>
                     <li>
-                        <a href="index.php?page=admin&action=deco" class="nav-link">
+                        <a href="index.php?page=admin&action=deco" class="nav-link" title="disconnect">
                             <i class="fas fa-ghost fa-nav"></i>
                             <span class="link-text">DECONNECTION</span>
                         </a>
                     </li>
                     <?php endif; ?>
-                    <li class="nav-item" id="themeButton">
-                        <a href="#top" class="nav-link">
+                    <li class="nav-item">
+                        <a href="#top" class="nav-link" title="go top">
                             <i class="fas fa-chevron-circle-up fa-nav"></i>
                             <span class="link-text">UP</span>
                         </a>

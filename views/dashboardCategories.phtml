@@ -11,14 +11,14 @@
     <tbody>
     <?php foreach($categoriesTable as $category): ?>
         <tr data-id="1" class="hide" id="<?= $category['id'] ?>">
-            <td><input class="id" type="text" value="<?= $category['id'] ?>"></td>
-            <td><input class="name" type="text" value="<?= $category['name'] ?>"></td>
+            <td><input class="id" type="text" value="<?=  htmlSpecialChars($category['id']) ?>"></td>
+            <td><input class="name" type="text" value="<?=  htmlSpecialChars($category['name']) ?>"></td>
             <td><a href="#" class="editCat"><i class="fas fa-pen-nib"></i></a></td>
     	    <td><a><i class="fas fa-trash-alt"></i></a></td>
         </tr>
         <tr id="<?= $category['id'] ?>" >
-            <td><?= $category['id'] ?></td>
-            <td><?= $category['name'] ?></td>
+            <td><?=  htmlSpecialChars($category['id']) ?></td>
+            <td><?=  htmlSpecialChars($category['name']) ?></td>
             <td><a href="#" class="editCat" data-id="<?= $category['id'] ?>"><i class="fas fa-pen-nib"></i></a></td>
     	    <td><a href="#" class="delCat" data-id="<?= $category['id'] ?>"><i class="fas fa-trash-alt"></i></a></td>
         </tr>

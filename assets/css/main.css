@@ -286,30 +286,30 @@ hr{
     width:100%;
 }
 
-#about .me-txt,
+#about .infos-me,
 #about .about-me{
     font-size: 2em;
     width:100%;
     padding:0 1em;
 }
 
-.me-txt hr{
+.infos-me hr{
     margin: 0;
     padding:0;
 }
-.me-txt .id{
+.infos-me .id{
     list-style-type:none;
     margin-bottom:1em;
 }
-.me-txt .id li{
+.infos-me .id li{
     margin: 0.5em 0;
 }
-.me-txt .id p{
+.infos-me .id p{
     margin-left:1em;
     display:inline;
 }
 
-.me-txt .id a{
+.infos-me .id a{
     text-decoration:none;
     color: var(--text-primary);
 }
@@ -323,7 +323,7 @@ hr{
     /********************************/
 
 .skills{
-    
+    width:100%;
     justify-content:space-around;
     padding:3em;
 }
@@ -436,6 +436,7 @@ hr{
 
 
 #projectsPage{
+    width:100%;
     justify-content:space-around;
     padding-bottom:10em;
 }
@@ -1033,7 +1034,7 @@ hr{
         width:60%;
     }
 
-    #about .me-txt,
+    #about .infos-me,
     #about .about-me{
         width:100%;
         height:auto;

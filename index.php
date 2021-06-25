@@ -33,7 +33,7 @@ if (isset($_GET['page']))
 		break;
 	}
 }
-else if(isset($_GET['ajax'])){
+else if(isset($_GET['ajax']) && isset($_SESSION['admin'])){
 	switch($_GET['ajax'])
 	{
 		case 'projects':

@@ -68,10 +68,10 @@
             <section id="content" class="flex wrap">
                 <h2>Infos persos:</h2>
                 <form id="form" method="post" class="flex wrap">
-                    <input id="firstname" value="<?= $contact['firstName'] ?>">
-                    <input id="lastname" value="<?= $contact['lastName'] ?>">
-                    <input id="mail" value="<?= $contact['mail'] ?>">
-                    <input id="phone" value="<?= $contact['phone'] ?>">
+                    <input id="firstname" value="<?=  htmlSpecialChars($contact['firstName']) ?>">
+                    <input id="lastname" value="<?=  htmlSpecialChars($contact['lastName']) ?>">
+                    <input id="mail" value="<?=  htmlSpecialChars($contact['mail']) ?>">
+                    <input id="phone" value="<?=  htmlSpecialChars($contact['phone']) ?>">
                     <button id="updateContact" type="button">Update</button>
                 </form>
             </section>

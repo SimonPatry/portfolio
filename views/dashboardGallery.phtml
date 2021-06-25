@@ -11,12 +11,12 @@
         <tr>
             <?php foreach($projects as $project): ?>
                 <?php if($project['id'] == $image['id_project']): ?>
-                    <td><?= $project['name'] ?></td>
+                    <td><?=  htmlSpecialChars($project['name']) ?></td>
                 <?php endif; ?>
             <?php endforeach; ?>
-            <td><img  src="<?= $image['src'] ?>" alt="<?= $image['alt'] ?>"></td>
-            <td><?= $image['alt'] ?></td>
-            <td><a href="#" class="delImg" data-id="<?= $image['id'] ?>"><i class="fas fa-trash-alt"></i></a></td>
+            <td><img  src="<?=  htmlSpecialChars($image['src']) ?>" alt="<?=  htmlSpecialChars($image['alt']) ?>"></td>
+            <td><?=  htmlSpecialChars($image['alt']) ?></td>
+            <td><a href="#" class="delImg" data-id="<?=  htmlSpecialChars($image['id']) ?>"><i class="fas fa-trash-alt"></i></a></td>
         </tr>
         <?php endforeach; ?>
     </table>
@@ -37,7 +37,7 @@
             <label for="proj">Project:</label>
             <select id="proj" name="proj">
             <?php foreach($projects as $project): ?>
-                <option value="<?= $project['id'] ?>"><?= $project['name'] ?></option>
+                <option value="<?=  htmlSpecialChars($project['id']) ?>"><?=  htmlSpecialChars($project['name']) ?></option>
             <?php endforeach; ?>
             </select>
         </li>

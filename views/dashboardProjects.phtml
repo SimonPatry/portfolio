@@ -31,8 +31,8 @@
             <div class="text flex wrap">
                 <div class="txt">
                     <div class="head">
-                        <p>Categorie: <?= $project['category']?></p>
-                        <p>Posté le: <?= $project['postDate']?></p>
+                        <p>Categorie: <?=  htmlSpecialChars($project['category']) ?></p>
+                        <p>Posté le: <?=  htmlSpecialChars($project['postDate']) ?></p>
                     </div>
                     <div class="description">
                         <p>Description:</p>
@@ -44,17 +44,17 @@
 
             <div class="visual flex wrap">
                 <div class="img">
-                    <img src="<?= $project['image']?>" alt="preview <?= $project['name']?>">
+                    <img src="<?=  htmlSpecialChars($project['image']) ?>" alt="preview <?=  htmlSpecialChars($project['name']) ?>">
                 </div>
             <?php if($project['video'] != "" ): ?>
                 <div class="vid responsive-video">
-                    <iframe class="video" src="<?= $project['video']?>" title="<?= $project['name']?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="video" src="<?=  htmlSpecialChars($project['video']) ?>" title="<?=  htmlSpecialChars($project['name']) ?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             <?php endif; ?>
             </div>
             <div class="buttons flex wrap">
-                <button data-id="<?= $project['id'] ?>" class="editProject"><i class="fas fa-pen-nib">  Edit</i></button>
-                <button data-id="<?= $project['id'] ?>" class="delProject"><i class="fas fa-trash-alt"> Delete</i></button>
+                <button data-id="<?=  htmlSpecialChars($project['id']) ?>" class="editProject"><i class="fas fa-pen-nib">  Edit</i></button>
+                <button data-id="<?=  htmlSpecialChars($project['id']) ?>" class="delProject"><i class="fas fa-trash-alt"> Delete</i></button>
             </div>
         </article>
     <?php endforeach; ?>
