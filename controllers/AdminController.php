@@ -20,9 +20,13 @@ class AdminController
 			header('location:accueil');
 			exit;
 		}
+		
+		/* log/unlog part as an admin */
 	}
 	private function connection()
 	{
+		/* pw/pseudo check secured with pw_hash */
+		
 		try
 		{
 			$admin = $this -> model -> getAdminByIdentifiant($_POST['identifiant']);
@@ -43,8 +47,6 @@ class AdminController
 		{
 			$this -> message = "Cet identifiant n'existe pas.";
 		}
-		
-		
 		
 	}
 	public function display()

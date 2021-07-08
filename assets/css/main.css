@@ -552,6 +552,7 @@ hr{
     padding-bottom: 56.25%;
     
 }
+
 .video {
     width: 100%;
     height: 100%;
@@ -559,6 +560,7 @@ hr{
     position: absolute;
     top: 0;
     left: 0;
+    border:none;
 }
 
     /********************************/
@@ -645,7 +647,6 @@ hr{
 .slideHide{
 	animation: hide 1s linear;
 }
-
 
 @keyframes show {
   from {

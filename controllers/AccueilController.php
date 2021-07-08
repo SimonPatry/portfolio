@@ -2,6 +2,11 @@
 
 namespace Controllers;
 
+/*
+	most of the code is located here: accueil.phtml
+	there isn't much from the databse
+*/
+
 class AccueilController
 {
 	private $projet;

@@ -21,13 +21,11 @@
                     <label for="vid">video(embed):</label>
                     <input class="vid" type="text" name="vid" id="vid" value="<?= $project['video']?>">
                 </div>
-                <button type="button" data-id="<? $project['id'] ?>" class="save"><i class="fas fa-pen-nib">  Edit</i></button>
+                <button type="button" data-id="<? htmlSpecialChars($project['id']) ?>" class="save"><i class="fas fa-pen-nib">  Edit</i></button>
             </form>
         </article>
-        <article id="<?= $project['name']?>" class="project flex wrap filter">
-        
+        <article id="<?= htmlSpecialChars($project['name']) ?>" class="project flex wrap filter">
             <h3><?= $project['name']?></h3>
-            
             <div class="text flex wrap">
                 <div class="txt">
                     <div class="head">
@@ -41,7 +39,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="visual flex wrap">
                 <div class="img">
                     <img src="<?=  htmlSpecialChars($project['image']) ?>" alt="preview <?=  htmlSpecialChars($project['name']) ?>">

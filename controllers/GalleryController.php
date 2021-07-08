@@ -2,6 +2,17 @@
 
 namespace Controllers;
 
+
+/* 
+	the gallery was made in one block and not a block per project
+	with ids from projects to sort it 
+	
+	this method isn't the most efficient but was a simple and fast
+	solution in this context.
+	
+	this part will evolve in a more appropriate solution
+*/
+
 class GalleryController
 {
     private $gallery;
@@ -22,9 +33,6 @@ class GalleryController
 	}
 	public function editGallery()
 	{
-		/*$datas  = file_get_contents('php://input');
-		$gallery = json_decode($datas);*/
-
 		$gallery = json_decode(file_get_contents('php://input'));
 		
         $datas = [$gallery->id_project, $gallery->src, $gallery->alt, $gallery->id];

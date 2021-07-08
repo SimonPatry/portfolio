@@ -2,6 +2,8 @@
 
 namespace Controllers;
 
+/* needs datas from each projects + the gallery sorted after in the phtml */
+
 class PortfolioController
 {
     private $project;

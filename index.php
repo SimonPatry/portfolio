@@ -1,11 +1,15 @@
 <?php
 
+/* includes */
+
 spl_autoload_register(function ($class_name) {
     	$file = lcfirst(str_replace('\\', '/', $class_name));
     	include $file.".php";
 });
 
 session_start();
+
+/* rooting */
 
 if (isset($_GET['page']))
 {
@@ -33,6 +37,9 @@ if (isset($_GET['page']))
 		break;
 	}
 }
+
+/* ajax rooting */
+
 else if(isset($_GET['ajax']) && isset($_SESSION['admin'])){
 	switch($_GET['ajax'])
 	{
@@ -82,6 +89,9 @@ else if(isset($_GET['ajax']) && isset($_SESSION['admin'])){
 			break;
 	}
 }
+
+/* default */
+
 else
 {
 	$controller = new Controllers\AccueilController();
