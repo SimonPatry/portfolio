@@ -1,26 +1,29 @@
 <?php foreach($projects as $project): ?>
-    <article id="<?=  htmlSpecialChars($project['name']=preg_replace('/ /', '', $project['name'])) ?>" class="project flex wrap filter">
-        <h3><?=  htmlSpecialChars($project['name']) ?></h3>
+    <article id="<?= $project['name']=preg_replace('/ /', '', $project['name']); ?>" class="project flex wrap filter">
+        <h3><?= $project['name']?></h3>
         <div class="text flex wrap">
             <div class="txt">
                 <div class="head">
-                    <p>Categorie: <?= htmlSpecialChars($project['category']) ?></p>
-                    <p>Posté le: <?= htmlSpecialChars($project['postDate']) ?></p>
+                    <p>Categorie: <?= $project['category']?></p>
+                    <p>Posté le: <?= $project['postDate']?></p>
                 </div>
+				<div class="link">
+					<p>lien: <a><?= $project['link'] ?></a></p>
+				</div>
                 <div class="description">
                     <p>Description:</p>
                     <hr>
-                    <p><?=  htmlSpecialChars($project['description']) ?></p>    
+                    <p><?= $project['description']?></p>    
                 </div>
             </div>
         </div>
         <div class="visual flex wrap">
             <div class="img">
-                <img src="<?=  htmlSpecialChars($project['image']) ?>" alt="preview <?=  htmlSpecialChars($project['name']) ?>">
+                <img src="<?= $project['image']?>" alt="preview <?= $project['name']?>">
             </div>
         <?php if($project['video'] != "" ): ?>
             <div class="vid responsive-video">
-                <iframe class="video" src="<?=  htmlSpecialChars($project['video']) ?>" title="<?= htmlSpecialChars($project['name']) ?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="video" src="<?= $project['video']?>" title="<?= $project['name']?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         <?php endif; ?>
         </div>
@@ -30,7 +33,7 @@
                 <?php foreach($gallery as $image): ?>
                     <?php if($image['id_project'] == $project['id']): ?>
                         <div class="sliderImage gall<?= $project['name']=preg_replace('/ /', '', $project['name']) ?> flex">
-                            <img src="<?=  htmlSpecialChars($image['src']) ?>" alt="<?=  htmlSpecialChars($image['alt']) ?>">
+                            <img src="<?= $image['src'] ?>" alt ="<?= $image['alt'] ?>">
                         </div>
                     <?php endif; ?>
                 <?php endforeach; ?>

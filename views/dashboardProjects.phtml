@@ -21,16 +21,18 @@
                     <label for="vid">video(embed):</label>
                     <input class="vid" type="text" name="vid" id="vid" value="<?= $project['video']?>">
                 </div>
-                <button type="button" data-id="<? htmlSpecialChars($project['id']) ?>" class="save"><i class="fas fa-pen-nib">  Edit</i></button>
+                <button type="button" data-id="<? $project['id'] ?>" class="save"><i class="fas fa-pen-nib">  Edit</i></button>
             </form>
         </article>
-        <article id="<?= htmlSpecialChars($project['name']) ?>" class="project flex wrap filter">
+        <article id="<?= $project['name']?>" class="project flex wrap filter">
+        
             <h3><?= $project['name']?></h3>
+            
             <div class="text flex wrap">
                 <div class="txt">
                     <div class="head">
-                        <p>Categorie: <?=  htmlSpecialChars($project['category']) ?></p>
-                        <p>Posté le: <?=  htmlSpecialChars($project['postDate']) ?></p>
+                        <p>Categorie: <?= $project['category']?></p>
+                        <p>Posté le: <?= $project['postDate']?></p>
                     </div>
                     <div class="description">
                         <p>Description:</p>
@@ -39,19 +41,20 @@
                     </div>
                 </div>
             </div>
+
             <div class="visual flex wrap">
                 <div class="img">
-                    <img src="<?=  htmlSpecialChars($project['image']) ?>" alt="preview <?=  htmlSpecialChars($project['name']) ?>">
+                    <img src="<?= $project['image']?>" alt="preview <?= $project['name']?>">
                 </div>
             <?php if($project['video'] != "" ): ?>
                 <div class="vid responsive-video">
-                    <iframe class="video" src="<?=  htmlSpecialChars($project['video']) ?>" title="<?=  htmlSpecialChars($project['name']) ?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="video" src="<?= $project['video']?>" title="<?= $project['name']?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             <?php endif; ?>
             </div>
             <div class="buttons flex wrap">
-                <button data-id="<?=  htmlSpecialChars($project['id']) ?>" class="editProject"><i class="fas fa-pen-nib">  Edit</i></button>
-                <button data-id="<?=  htmlSpecialChars($project['id']) ?>" class="delProject"><i class="fas fa-trash-alt"> Delete</i></button>
+                <button data-id="<?= $project['id'] ?>" class="editProject"><i class="fas fa-pen-nib">  Edit</i></button>
+                <button data-id="<?= $project['id'] ?>" class="delProject"><i class="fas fa-trash-alt"> Delete</i></button>
             </div>
         </article>
     <?php endforeach; ?>
