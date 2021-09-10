@@ -5,11 +5,11 @@ namespace Models;
 class Projects extends Database
 {
     
-    public function addProject($name, $description, $image, $video, $date, $category)
+    public function addProject($name, $description, $link, $image, $video, $date, $category)
     {
         $this -> modifyOne("
-        INSERT INTO project(name, description, image, video, postDate, id_category)
-        VALUES (?, ?, ?, ?, ?, ?)", [$name,$description,$image,$video,$date,$category]);
+        INSERT INTO project(name, description, link, image, video, postDate, id_category)
+        VALUES (?, ?, ?, ?, ?, ?)", [$name,$description,$link,$image,$video,$date,$category]);
     }
     
     public function editProject($datas)
@@ -19,6 +19,7 @@ class Projects extends Database
         name = ?,
         id_category = ?,
         description = ?,
+		link = ?,
         image = ?,
         video = ?
         WHERE id = ?" ,$datas);
@@ -34,7 +35,7 @@ class Projects extends Database
     public function getProjectById($id):array
     {
     	return $this -> findOne("
-    	SELECT id, name, description, image, video, postDate, category.name as category
+    	SELECT id, name, description, link, image, video, postDate, category.name as category
     	FROM project
         INNER JOIN category ON id_category = category.id
     	WHERE id = ?",[$id]);
@@ -43,7 +44,7 @@ class Projects extends Database
     public function getAllProjects()
     {
         return $this -> findAll("
-    	SELECT project.id, project.name, description, image, video, postDate, category.name as category
+    	SELECT project.id, project.name, description, link, image, video, postDate, category.name as category
     	FROM project
         INNER JOIN category ON id_category = category.id");
     }
